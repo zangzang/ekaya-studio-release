@@ -21,10 +21,12 @@ jobs:
     if: ${{ !endsWith(github.event.release.tag_name, '-latest') }}
     runs-on: ubuntu-latest
     steps:
+      # gh release 하위명령이 대상 레포를 git 원격에서 추론하므로 checkout이 필요하다.
+      # (GH_REPO 만으로는 gh가 여전히 git 컨텍스트를 찾다 "not a git repository"로 실패)
+      - uses: actions/checkout@v4
       - name: Sync published version assets onto <product>-latest
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # checkout이 없어 git 컨텍스트가 없으므로, gh가 대상 레포를 알도록 명시한다.
           GH_REPO: ${{ github.repository }}
           TAG: ${{ github.event.release.tag_name }}
         run: |
