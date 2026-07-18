@@ -24,6 +24,8 @@ jobs:
       - name: Sync published version assets onto <product>-latest
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # checkout이 없어 git 컨텍스트가 없으므로, gh가 대상 레포를 알도록 명시한다.
+          GH_REPO: ${{ github.repository }}
           TAG: ${{ github.event.release.tag_name }}
         run: |
           set -euo pipefail
