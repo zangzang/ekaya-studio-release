@@ -1,0 +1,52 @@
+name: 기능 제안
+description: 이런 게 있으면 좋겠다는 생각
+title: "[제안] "
+labels: ["type:enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        앱의 **도움말 → 피드백 보내기**에서 시작하면 아래 항목이 자동으로 채워집니다.
+  - type: dropdown
+    id: product
+    attributes:
+      label: 제품
+      options:
+        - devvault
+        - modeler
+        - diff
+        - design
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 버전
+      placeholder: "0.2.6"
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: 앱
+      description: 어느 앱에 대한 제안인지
+  - type: textarea
+    id: problem
+    attributes:
+      label: 어떤 불편이 있나요
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: 제안 내용
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 지금은 어떻게 우회하고 있나요
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 환경 정보
+      description: 앱이 자동으로 채웁니다
+      render: text

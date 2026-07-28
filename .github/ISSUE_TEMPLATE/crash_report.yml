@@ -1,0 +1,56 @@
+name: 비정상 종료 신고
+description: 앱이 갑자기 꺼졌을 때
+title: "[크래시] "
+labels: ["type:bug", "crash"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        앱이 비정상 종료를 감지하면 다음 실행 때 리포트 작성을 제안합니다.
+        그 경로로 들어오면 아래 항목이 자동으로 채워집니다.
+  - type: dropdown
+    id: product
+    attributes:
+      label: 제품
+      options:
+        - devvault
+        - modeler
+        - diff
+        - design
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 버전
+      placeholder: "0.2.6"
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: 앱
+      description: 종료 직전에 쓰던 앱
+  - type: input
+    id: when
+    attributes:
+      label: 발생 시각
+      description: 앱이 자동으로 채웁니다
+  - type: textarea
+    id: what
+    attributes:
+      label: 직전에 무엇을 하고 있었나요
+    validations:
+      required: true
+  - type: textarea
+    id: crashlog
+    attributes:
+      label: 패닉 메시지
+      description: 앱이 자동으로 채웁니다
+      render: text
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 환경 정보
+      description: 앱이 자동으로 채웁니다
+      render: text

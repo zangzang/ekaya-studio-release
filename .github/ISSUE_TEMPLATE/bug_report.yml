@@ -1,0 +1,57 @@
+name: 버그 신고
+description: 동작이 잘못됐을 때
+title: "[버그] "
+labels: ["type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        앱의 **도움말 → 피드백 보내기**에서 시작하면 아래 항목이 자동으로 채워집니다.
+  - type: dropdown
+    id: product
+    attributes:
+      label: 제품
+      description: 어느 제품에서 발생했는지
+      options:
+        - devvault
+        - modeler
+        - diff
+        - design
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 버전
+      placeholder: "0.2.6"
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: 앱
+      description: 어느 앱에서 발생했는지
+  - type: textarea
+    id: what
+    attributes:
+      label: 무슨 일이 있었나요
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 절차
+      placeholder: |
+        1.
+        2.
+        3.
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 동작
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 환경 정보
+      description: 앱이 자동으로 채웁니다
+      render: text
