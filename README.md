@@ -18,3 +18,12 @@ DevVault 데스크톱 앱 다운로드 전용 레포입니다. 소스코드는 �
 - Linux: `.deb` 또는 `.AppImage`
 
 설치된 앱은 `{product}-latest` 릴리스를 통해 자동 업데이트를 확인합니다.
+
+## 샘플 파일
+
+설치 후 바로 열어볼 수 있는 앱별 프로젝트 파일 샘플을 [`apps/`](apps/)에 두었습니다.
+
+- [WBS](apps/wbs/) — `.wbs.json` (작업분해구조 + 간트)
+- [Data Modeler](apps/data-modeler/) — `.dmodel.json`, DDL 가져오기용 `.sql`
+
+각 폴더의 README에 무엇이 들어 있는지와 열어본 뒤 해볼 것을 정리해 두었습니다.

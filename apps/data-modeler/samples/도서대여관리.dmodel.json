@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "meta": {
+    "name": "도서대여관리",
+    "createdAt": "2026-06-25T00:00:00.000Z",
+    "updatedAt": "2026-06-25T12:00:00.000Z"
+  },
+  "settings": { "defaultPrefix": "TB", "namingPattern": "B" },
+  "words": [
+    { "id": "w_book",   "ko": "도서",   "abbr": "BOOK",   "en": "Book",        "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_mbr",    "ko": "회원",   "abbr": "MBR",    "en": "Member",      "isFormat": false, "synonyms": ["사용자"], "forbidden": false },
+    { "id": "w_rent",   "ko": "대여",   "abbr": "RENT",   "en": "Rental",      "isFormat": false, "synonyms": ["대출"], "forbidden": false },
+    { "id": "w_return", "ko": "반납",   "abbr": "RTN",    "en": "Return",      "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_rsrv",   "ko": "예약",   "abbr": "RSRV",   "en": "Reservation", "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_ctgr",   "ko": "분류",   "abbr": "CTGR",   "en": "Category",    "isFormat": false, "synonyms": ["카테고리"], "forbidden": false },
+    { "id": "w_pub",    "ko": "출판",   "abbr": "PUB",    "en": "Publisher",   "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_athr",   "ko": "저자",   "abbr": "ATHR",   "en": "Author",      "isFormat": false, "synonyms": ["작가"], "forbidden": false },
+    { "id": "w_isbn",   "ko": "ISBN",   "abbr": "ISBN",   "en": "ISBN",        "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_ovrd",   "ko": "연체",   "abbr": "OVRD",   "en": "Overdue",     "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_pnlt",   "ko": "패널티", "abbr": "PNLT",   "en": "Penalty",     "isFormat": false, "synonyms": ["벌금"], "forbidden": false },
+    { "id": "w_shelf",  "ko": "서가",   "abbr": "SHELF",  "en": "Shelf",       "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_title",  "ko": "제목",   "abbr": "TITLE",  "en": "Title",       "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_tel",    "ko": "전화",   "abbr": "TEL",    "en": "Telephone",    "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_sts",    "ko": "상태",   "abbr": "STS",    "en": "Status",       "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_no",     "ko": "번호",   "abbr": "NO",     "en": "Number",      "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_nm",     "ko": "명",     "abbr": "NM",     "en": "Name",        "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_cd",     "ko": "코드",   "abbr": "CD",     "en": "Code",        "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_dt",     "ko": "일자",   "abbr": "DT",     "en": "Date",        "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_dtm",    "ko": "일시",   "abbr": "DTM",    "en": "Datetime",    "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_yn",     "ko": "여부",   "abbr": "YN",     "en": "YesNo",       "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_seq",    "ko": "순번",   "abbr": "SEQ",    "en": "Sequence",    "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_cnt",    "ko": "건수",   "abbr": "CNT",    "en": "Count",       "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_amt",    "ko": "금액",   "abbr": "AMT",    "en": "Amount",      "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_yr",     "ko": "년도",   "abbr": "YR",     "en": "Year",        "isFormat": true,  "synonyms": [], "forbidden": false }
+  ],
+  "domains": [
+    { "id": "d_idno",   "name": "식별번호", "group": "문자", "dataType": "VARCHAR", "length": 20, "scale": null, "unit": null, "default": null },
+    { "id": "d_name",   "name": "명칭",     "group": "문자", "dataType": "VARCHAR", "length": 100, "scale": null, "unit": null, "default": null },
+    { "id": "d_code_s", "name": "짧은코드", "group": "문자", "dataType": "VARCHAR", "length": 10, "scale": null, "unit": null, "default": null },
+    { "id": "d_isbn",   "name": "ISBN",     "group": "문자", "dataType": "VARCHAR", "length": 13, "scale": null, "unit": null, "default": null },
+    { "id": "d_date",   "name": "일자",     "group": "일시", "dataType": "DATE",    "length": null,"scale": null, "unit": null, "default": null },
+    { "id": "d_dtm",    "name": "일시",     "group": "일시", "dataType": "TIMESTAMP","length": null,"scale": null, "unit": null, "default": "CURRENT_TIMESTAMP" },
+    { "id": "d_cnt",    "name": "건수",     "group": "숫자", "dataType": "INTEGER", "length": null,"scale": null, "unit": null, "default": null },
+    { "id": "d_amt",    "name": "금액",     "group": "숫자", "dataType": "NUMERIC","length": 10, "scale": 0, "unit": "원", "default": null },
+    { "id": "d_yn",     "name": "여부",     "group": "문자", "dataType": "CHAR",    "length": 1,  "scale": null, "unit": null, "default": null },
+    { "id": "d_desc",   "name": "비고",     "group": "문자", "dataType": "VARCHAR", "length": 500, "scale": null, "unit": null, "default": null }
+  ],
+  "terms": [
+    { "id": "t_bookno",   "ko": "도서번호",   "wordIds": ["w_book","w_no"],    "columnName": "BOOK_NO",   "domainId": "d_idno" },
+    { "id": "t_booknm",   "ko": "도서명",     "wordIds": ["w_book","w_nm"],    "columnName": "BOOK_NM",   "domainId": "d_name" },
+    { "id": "t_isbn",     "ko": "ISBN",       "wordIds": ["w_isbn"],           "columnName": "ISBN",      "domainId": "d_isbn" },
+    { "id": "t_pubyr",    "ko": "출판년도",   "wordIds": ["w_pub","w_yr"],     "columnName": "PUB_YR",    "domainId": "d_code_s" },
+    { "id": "t_shelfcd",  "ko": "서가코드",   "wordIds": ["w_shelf","w_cd"],   "columnName": "SHELF_CD",  "domainId": "d_code_s" },
+    { "id": "t_mbrno",    "ko": "회원번호",   "wordIds": ["w_mbr","w_no"],     "columnName": "MBR_NO",    "domainId": "d_idno" },
+    { "id": "t_mbrnm",    "ko": "회원명",     "wordIds": ["w_mbr","w_nm"],     "columnName": "MBR_NM",    "domainId": "d_name" },
+    { "id": "t_mbrtel",   "ko": "회원전화",   "wordIds": ["w_mbr","w_tel"],    "columnName": "MBR_TEL",   "domainId": "d_name" },
+    { "id": "t_rentdt",   "ko": "대여일자",   "wordIds": ["w_rent","w_dt"],    "columnName": "RENT_DT",   "domainId": "d_date" },
+    { "id": "t_duedt",    "ko": "반납예정일", "wordIds": ["w_return","w_dt"],  "columnName": "DUE_DT",    "domainId": "d_date" },
+    { "id": "t_rtndt",    "ko": "반납일자",   "wordIds": ["w_return","w_dt"],  "columnName": "RTN_DT",    "domainId": "d_date" },
+    { "id": "t_ovrdcnt",  "ko": "연체건수",   "wordIds": ["w_ovrd","w_cnt"],   "columnName": "OVRD_CNT",  "domainId": "d_cnt" },
+    { "id": "t_pnltamt",  "ko": "패널티금액", "wordIds": ["w_pnlt","w_amt"],   "columnName": "PNLT_AMT",  "domainId": "d_amt" },
+    { "id": "t_rentsts",  "ko": "대여상태",   "wordIds": ["w_rent","w_sts"],   "columnName": "RENT_STS",  "domainId": "d_code_s" },
+    { "id": "t_ctgrcd",   "ko": "분류코드",   "wordIds": ["w_ctgr","w_cd"],    "columnName": "CTGR_CD",   "domainId": "d_code_s" },
+    { "id": "t_ctgrnm",   "ko": "분류명",     "wordIds": ["w_ctgr","w_nm"],    "columnName": "CTGR_NM",   "domainId": "d_name" },
+    { "id": "t_athrnm",   "ko": "저자명",     "wordIds": ["w_athr","w_nm"],    "columnName": "ATHR_NM",   "domainId": "d_name" },
+    { "id": "t_pubnm",    "ko": "출판사명",   "wordIds": ["w_pub","w_nm"],     "columnName": "PUB_NM",    "domainId": "d_name" },
+    { "id": "t_rsrvdt",   "ko": "예약일자",   "wordIds": ["w_rsrv","w_dt"],    "columnName": "RSRV_DT",   "domainId": "d_date" },
+    { "id": "t_rsrvseq",  "ko": "예약순번",   "wordIds": ["w_rsrv","w_seq"],   "columnName": "RSRV_SEQ",  "domainId": "d_cnt" },
+    { "id": "t_useyn",    "ko": "사용여부",   "wordIds": ["w_yn"],             "columnName": "USE_YN",    "domainId": "d_yn" },
+    { "id": "t_rsrvsts",  "ko": "예약상태",   "wordIds": ["w_rsrv","w_sts"],   "columnName": "RSRV_STS",  "domainId": "d_code_s" },
+    { "id": "t_title",    "ko": "제목",       "wordIds": ["w_title"],          "columnName": "TITLE",     "domainId": "d_name" }
+  ],
+  "entities": [
+    {
+      "id": "e_book", "ko": "도서", "tableName": "LIB_TBM_BOOK", "tableType": "M",
+      "position": { "x": 140, "y": 140 },
+      "attributes": [
+        { "id": "a_book_pk",   "termId": "t_bookno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_book_nm",   "termId": "t_booknm",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_book_isbn", "termId": "t_isbn",    "isPk": false, "isNotNull": false, "isUnique": true,  "default": null },
+        { "id": "a_book_pubyr","termId": "t_pubyr",   "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_book_shelf","termId": "t_shelfcd", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_book_ctgr", "termId": "t_ctgrcd",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_book_use",  "termId": "t_useyn",   "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'Y'" }
+      ],
+      "groupId": "g_lib",
+      "indexes": [
+        { "id": "ix_book_isbn", "name": "UX_BOOK_ISBN", "columns": ["ISBN"], "unique": true },
+        { "id": "ix_book_ctgr", "name": "IX_BOOK_CTGR", "columns": ["CTGR_CD", "BOOK_NM"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_mbr", "ko": "회원", "tableName": "LIB_TBM_MBR", "tableType": "M",
+      "position": { "x": 500, "y": 60 },
+      "attributes": [
+        { "id": "a_mbr_pk",  "termId": "t_mbrno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_mbr_nm",  "termId": "t_mbrnm",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_mbr_tel", "termId": "t_mbrtel", "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_mbr_use", "termId": "t_useyn",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'Y'" }
+      ],
+      "groupId": "g_lib",
+      "indexes": [
+        { "id": "ix_mbr_nm", "name": "IX_MBR_NM", "columns": ["MBR_NM"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_ctgr", "ko": "도서분류", "tableName": "LIB_TBM_CTGR", "tableType": "M",
+      "position": { "x": 500, "y": 290 },
+      "attributes": [
+        { "id": "a_ctgr_pk",  "termId": "t_ctgrcd", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_ctgr_nm",  "termId": "t_ctgrnm", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_ctgr_upper","termId": "t_shelfcd","isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_lib"
+    },
+    {
+      "id": "e_athr", "ko": "저자", "tableName": "LIB_TBM_ATHR", "tableType": "M",
+      "position": { "x": 500, "y": 460 },
+      "attributes": [
+        { "id": "a_athr_pk", "termId": "t_athrnm", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null }
+      ],
+      "groupId": "g_lib"
+    },
+    {
+      "id": "e_bookathr", "ko": "도서저자", "tableName": "LIB_TBD_BOOK_ATHR", "tableType": "D",
+      "position": { "x": 260, "y": 400 },
+      "attributes": [
+        { "id": "a_ba_book", "termId": "t_bookno", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_ba_athr", "termId": "t_athrnm", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_ba_seq",  "termId": "t_rsrvseq","isPk": false, "isNotNull": true,  "isUnique": false, "default": "1" }
+      ],
+      "groupId": "g_lib"
+    },
+    {
+      "id": "e_rent", "ko": "대여", "tableName": "LIB_TBT_RENT", "tableType": "T",
+      "position": { "x": 100, "y": 140 },
+      "attributes": [
+        { "id": "a_rent_book","termId": "t_bookno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_rent_mbr", "termId": "t_mbrno",   "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_rent_dt",  "termId": "t_rentdt",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_rent_due", "termId": "t_duedt",   "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_rent_rtn", "termId": "t_rtndt",   "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_rent_sts", "termId": "t_rentsts", "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'RENT'" },
+        { "id": "a_rent_ovrd","termId": "t_ovrdcnt", "isPk": false, "isNotNull": false, "isUnique": false, "default": "0" }
+      ],
+      "groupId": "g_lib",
+      "indexes": [
+        { "id": "ix_rent_mbr",  "name": "IX_RENT_MBR",  "columns": ["MBR_NO", "RENT_DT"], "unique": false },
+        { "id": "ix_rent_due",  "name": "IX_RENT_DUE",  "columns": ["DUE_DT", "RENT_STS"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_rsrv", "ko": "예약", "tableName": "LIB_TBT_RSRV", "tableType": "T",
+      "position": { "x": 100, "y": 400 },
+      "attributes": [
+        { "id": "a_rsrv_book","termId": "t_bookno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_rsrv_mbr", "termId": "t_mbrno",   "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_rsrv_dt",  "termId": "t_rsrvdt",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_rsrv_sts", "termId": "t_rsrvsts", "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'WAIT'" }
+      ],
+      "groupId": "g_lib"
+    },
+    {
+      "id": "e_pnlt", "ko": "패널티", "tableName": "LIB_TBH_PNLT", "tableType": "H",
+      "position": { "x": 450, "y": 140 },
+      "attributes": [
+        { "id": "a_pnlt_mbr", "termId": "t_mbrno",   "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_pnlt_dt",  "termId": "t_rentdt",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_pnlt_amt", "termId": "t_pnltamt", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_pnlt_desc","termId": "t_rentsts", "isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_lib"
+    }
+  ],
+  "relationships": [
+    { "id": "r_book_ctgr",    "fromEntityId": "e_book",     "fromAttrId": "a_book_ctgr",  "toEntityId": "e_ctgr",     "toAttrId": "a_ctgr_pk",   "type": "many-to-one" },
+    { "id": "r_ctgr_upper",   "fromEntityId": "e_ctgr",     "fromAttrId": "a_ctgr_upper", "toEntityId": "e_ctgr",     "toAttrId": "a_ctgr_pk",   "type": "many-to-one" },
+    { "id": "r_ba_book",      "fromEntityId": "e_bookathr", "fromAttrId": "a_ba_book",    "toEntityId": "e_book",     "toAttrId": "a_book_pk",   "type": "many-to-one" },
+    { "id": "r_ba_athr",      "fromEntityId": "e_bookathr", "fromAttrId": "a_ba_athr",    "toEntityId": "e_athr",     "toAttrId": "a_athr_pk",   "type": "many-to-one" },
+    { "id": "r_rent_book",    "fromEntityId": "e_rent",     "fromAttrId": "a_rent_book",  "toEntityId": "e_book",     "toAttrId": "a_book_pk",   "type": "many-to-one" },
+    { "id": "r_rent_mbr",     "fromEntityId": "e_rent",     "fromAttrId": "a_rent_mbr",   "toEntityId": "e_mbr",      "toAttrId": "a_mbr_pk",    "type": "many-to-one" },
+    { "id": "r_rsrv_book",    "fromEntityId": "e_rsrv",     "fromAttrId": "a_rsrv_book",  "toEntityId": "e_book",     "toAttrId": "a_book_pk",   "type": "many-to-one" },
+    { "id": "r_rsrv_mbr",     "fromEntityId": "e_rsrv",     "fromAttrId": "a_rsrv_mbr",   "toEntityId": "e_mbr",      "toAttrId": "a_mbr_pk",    "type": "many-to-one" },
+    { "id": "r_pnlt_mbr",     "fromEntityId": "e_pnlt",     "fromAttrId": "a_pnlt_mbr",   "toEntityId": "e_mbr",      "toAttrId": "a_mbr_pk",    "type": "many-to-one" }
+  ],
+  "tableGroups": [
+    { "id": "g_lib", "name": "도서관리", "prefix": "LIB", "color": "#3b82f6", "position": { "x": 20, "y": 20 }, "size": { "width": 800, "height": 615 }, "namingEnabled": true }
+  ],
+  "views": [
+    {
+      "id": "v_rent_list",
+      "name": "V_RENT_LIST",
+      "sql": "SELECT R.RENT_DT, M.MBR_NM, B.BOOK_NM, R.DUE_DT, R.RTN_DT, R.RENT_STS\nFROM LIB_TBT_RENT R\n  JOIN LIB_TBM_MBR M ON R.MBR_NO = M.MBR_NO\n  JOIN LIB_TBM_BOOK B ON R.BOOK_NO = B.BOOK_NO\nORDER BY R.RENT_DT DESC"
+    },
+    {
+      "id": "v_overdue",
+      "name": "V_OVERDUE",
+      "sql": "SELECT M.MBR_NO, M.MBR_NM, M.MBR_TEL, COUNT(*) AS OVRD_CNT\nFROM LIB_TBT_RENT R\n  JOIN LIB_TBM_MBR M ON R.MBR_NO = M.MBR_NO\nWHERE R.RENT_STS = 'RENT' AND R.DUE_DT < CURRENT_DATE\nGROUP BY M.MBR_NO, M.MBR_NM, M.MBR_TEL"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "meta": {
+    "name": "병원예약관리",
+    "createdAt": "2026-06-25T00:00:00.000Z",
+    "updatedAt": "2026-06-25T12:00:00.000Z"
+  },
+  "settings": { "defaultPrefix": "TB", "namingPattern": "B" },
+  "words": [
+    { "id": "w_ptnt",  "ko": "환자",   "abbr": "PTNT",  "en": "Patient",      "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_doctor","ko": "의사",   "abbr": "DOC",   "en": "Doctor",       "isFormat": false, "synonyms": ["의사"], "forbidden": false },
+    { "id": "w_dept",  "ko": "진료과", "abbr": "DEPT",  "en": "Department",   "isFormat": false, "synonyms": ["과"], "forbidden": false },
+    { "id": "w_appt",  "ko": "예약",   "abbr": "APPT",  "en": "Appointment",  "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_chart", "ko": "차트",   "abbr": "CHART", "en": "Chart",        "isFormat": false, "synonyms": ["진료기록"], "forbidden": false },
+    { "id": "w_prsc",  "ko": "처방",   "abbr": "PRSC",  "en": "Prescription", "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_med",   "ko": "약품",   "abbr": "MED",   "en": "Medicine",     "isFormat": false, "synonyms": ["의약품"], "forbidden": false },
+    { "id": "w_symp",  "ko": "증상",   "abbr": "SYMP",  "en": "Symptom",      "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_diag",  "ko": "진단",   "abbr": "DIAG",  "en": "Diagnosis",    "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_pay",   "ko": "수납",   "abbr": "PAY",   "en": "Payment",      "isFormat": false, "synonyms": ["결제"], "forbidden": false },
+    { "id": "w_insur", "ko": "보험",   "abbr": "INSUR", "en": "Insurance",    "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_spec",  "ko": "전문",   "abbr": "SPEC",  "en": "Specialty",    "isFormat": false, "synonyms": ["전공"], "forbidden": false },
+    { "id": "w_room",  "ko": "진료실", "abbr": "ROOM",  "en": "Room",         "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_dose",  "ko": "용량",   "abbr": "DOSE",  "en": "Dosage",       "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_dur",   "ko": "기간",   "abbr": "DUR",   "en": "Duration",     "isFormat": false, "synonyms": [], "forbidden": false },
+    { "id": "w_no",    "ko": "번호",   "abbr": "NO",    "en": "Number",       "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_nm",    "ko": "명",     "abbr": "NM",    "en": "Name",         "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_cd",    "ko": "코드",   "abbr": "CD",    "en": "Code",         "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_dt",    "ko": "일자",   "abbr": "DT",    "en": "Date",         "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_dtm",   "ko": "일시",   "abbr": "DTM",   "en": "Datetime",     "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_yn",    "ko": "여부",   "abbr": "YN",    "en": "YesNo",        "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_seq",   "ko": "순번",   "abbr": "SEQ",   "en": "Sequence",     "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_amt",   "ko": "금액",   "abbr": "AMT",   "en": "Amount",       "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_cnt",   "ko": "횟수",   "abbr": "CNT",   "en": "Count",        "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_day",   "ko": "일",     "abbr": "DAY",   "en": "Day",          "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_sts",   "ko": "상태",   "abbr": "STS",   "en": "Status",       "isFormat": true,  "synonyms": [], "forbidden": false },
+    { "id": "w_desc",  "ko": "비고",   "abbr": "DESC",  "en": "Description",  "isFormat": true,  "synonyms": [], "forbidden": false }
+  ],
+  "domains": [
+    { "id": "d_idno",   "name": "식별번호", "group": "문자", "dataType": "VARCHAR","length": 20, "scale": null, "unit": null, "default": null },
+    { "id": "d_name",   "name": "명칭",     "group": "문자", "dataType": "VARCHAR","length": 100,"scale": null, "unit": null, "default": null },
+    { "id": "d_code_s", "name": "짧은코드", "group": "문자", "dataType": "VARCHAR","length": 10, "scale": null, "unit": null, "default": null },
+    { "id": "d_date",   "name": "일자",     "group": "일시", "dataType": "DATE",   "length": null,"scale": null, "unit": null, "default": null },
+    { "id": "d_dtm",    "name": "일시",     "group": "일시", "dataType": "TIMESTAMP","length": null,"scale": null,"unit": null, "default": "CURRENT_TIMESTAMP" },
+    { "id": "d_time",   "name": "시간",     "group": "일시", "dataType": "TIME",   "length": null,"scale": null, "unit": null, "default": null },
+    { "id": "d_amt",    "name": "금액",     "group": "숫자", "dataType": "NUMERIC","length": 12, "scale": 0, "unit": "원", "default": null },
+    { "id": "d_cnt",    "name": "횟수",     "group": "숫자", "dataType": "INTEGER","length": null,"scale": null, "unit": "회", "default": null },
+    { "id": "d_day",    "name": "일수",     "group": "숫자", "dataType": "INTEGER","length": null,"scale": null, "unit": "일", "default": null },
+    { "id": "d_yn",     "name": "여부",     "group": "문자", "dataType": "CHAR",   "length": 1,  "scale": null, "unit": null, "default": null },
+    { "id": "d_desc",   "name": "비고",     "group": "문자", "dataType": "VARCHAR","length": 500,"scale": null, "unit": null, "default": null }
+  ],
+  "terms": [
+    { "id": "t_ptntno",   "ko": "환자번호",   "wordIds": ["w_ptnt","w_no"],    "columnName": "PTNT_NO",    "domainId": "d_idno" },
+    { "id": "t_ptntnm",   "ko": "환자명",     "wordIds": ["w_ptnt","w_nm"],    "columnName": "PTNT_NM",    "domainId": "d_name" },
+    { "id": "t_docno",    "ko": "의사번호",   "wordIds": ["w_doctor","w_no"],  "columnName": "DOC_NO",     "domainId": "d_idno" },
+    { "id": "t_docnm",    "ko": "의사명",     "wordIds": ["w_doctor","w_nm"],  "columnName": "DOC_NM",     "domainId": "d_name" },
+    { "id": "t_deptcd",   "ko": "진료과코드", "wordIds": ["w_dept","w_cd"],     "columnName": "DEPT_CD",    "domainId": "d_code_s" },
+    { "id": "t_deptnm",   "ko": "진료과명",   "wordIds": ["w_dept","w_nm"],     "columnName": "DEPT_NM",    "domainId": "d_name" },
+    { "id": "t_apptdt",   "ko": "예약일자",   "wordIds": ["w_appt","w_dt"],     "columnName": "APPT_DT",    "domainId": "d_date" },
+    { "id": "t_appttm",   "ko": "예약시간",   "wordIds": ["w_appt","w_dtm"],    "columnName": "APPT_TM",    "domainId": "d_time" },
+    { "id": "t_apptsts",  "ko": "예약상태",   "wordIds": ["w_appt","w_sts"],    "columnName": "APPT_STS",   "domainId": "d_code_s" },
+    { "id": "t_chartno",  "ko": "차트번호",   "wordIds": ["w_chart","w_no"],    "columnName": "CHART_NO",   "domainId": "d_idno" },
+    { "id": "t_sympdesc", "ko": "증상상세",   "wordIds": ["w_symp","w_desc"],   "columnName": "SYMP_DESC",  "domainId": "d_desc" },
+    { "id": "t_diagcd",   "ko": "진단코드",   "wordIds": ["w_diag","w_cd"],     "columnName": "DIAG_CD",    "domainId": "d_code_s" },
+    { "id": "t_diagnm",   "ko": "진단명",     "wordIds": ["w_diag","w_nm"],     "columnName": "DIAG_NM",    "domainId": "d_name" },
+    { "id": "t_medcd",    "ko": "약품코드",   "wordIds": ["w_med","w_cd"],      "columnName": "MED_CD",     "domainId": "d_code_s" },
+    { "id": "t_mednm",    "ko": "약품명",     "wordIds": ["w_med","w_nm"],      "columnName": "MED_NM",     "domainId": "d_name" },
+    { "id": "t_doseamt",  "ko": "용량",       "wordIds": ["w_dose","w_amt"],    "columnName": "DOSE_AMT",   "domainId": "d_code_s" },
+    { "id": "t_durday",   "ko": "투약일수",   "wordIds": ["w_dur","w_day"],     "columnName": "DUR_DAY",    "domainId": "d_day" },
+    { "id": "t_durcnt",   "ko": "투약횟수",   "wordIds": ["w_dur","w_cnt"],     "columnName": "DUR_CNT",    "domainId": "d_cnt" },
+    { "id": "t_payamt",   "ko": "수납금액",   "wordIds": ["w_pay","w_amt"],     "columnName": "PAY_AMT",    "domainId": "d_amt" },
+    { "id": "t_insuryn",  "ko": "보험여부",   "wordIds": ["w_insur","w_yn"],    "columnName": "INSUR_YN",   "domainId": "d_yn" },
+    { "id": "t_insurnm",  "ko": "보험사명",   "wordIds": ["w_insur","w_nm"],    "columnName": "INSUR_NM",   "domainId": "d_name" },
+    { "id": "t_specnm",   "ko": "전문분야",   "wordIds": ["w_spec","w_nm"],     "columnName": "SPEC_NM",    "domainId": "d_name" },
+    { "id": "t_roomcd",   "ko": "진료실코드", "wordIds": ["w_room","w_cd"],     "columnName": "ROOM_CD",    "domainId": "d_code_s" },
+    { "id": "t_useyn",    "ko": "사용여부",   "wordIds": ["w_yn"],              "columnName": "USE_YN",     "domainId": "d_yn" },
+    { "id": "t_birthdt",  "ko": "생년월일",   "wordIds": ["w_ptnt","w_dt"],     "columnName": "BIRTH_DT",   "domainId": "d_date" }
+  ],
+  "entities": [
+    {
+      "id": "e_ptnt", "ko": "환자", "tableName": "HOS_TBM_PTNT", "tableType": "M",
+      "position": { "x": 80, "y": 80 },
+      "attributes": [
+        { "id": "a_ptnt_pk",   "termId": "t_ptntno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_ptnt_nm",   "termId": "t_ptntnm",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_ptnt_birth","termId": "t_birthdt", "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_ptnt_insur","termId": "t_insuryn", "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'N'" }
+      ],
+      "groupId": "g_hos",
+      "indexes": [
+        { "id": "ix_ptnt_nm", "name": "IX_PTNT_NM", "columns": ["PTNT_NM", "BIRTH_DT"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_dept", "ko": "진료과", "tableName": "HOS_TBM_DEPT", "tableType": "M",
+      "position": { "x": 380, "y": 40 },
+      "attributes": [
+        { "id": "a_dept_pk", "termId": "t_deptcd", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_dept_nm", "termId": "t_deptnm", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null }
+      ],
+      "groupId": "g_hos"
+    },
+    {
+      "id": "e_doc", "ko": "의사", "tableName": "HOS_TBM_DOC", "tableType": "M",
+      "position": { "x": 380, "y": 220 },
+      "attributes": [
+        { "id": "a_doc_pk",   "termId": "t_docno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_doc_nm",   "termId": "t_docnm",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_doc_dept", "termId": "t_deptcd", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_doc_spec", "termId": "t_specnm", "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_doc_super","termId": "t_docno",  "isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_hos",
+      "indexes": [
+        { "id": "ix_doc_dept", "name": "IX_DOC_DEPT", "columns": ["DEPT_CD", "DOC_NM"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_room", "ko": "진료실", "tableName": "HOS_TBM_ROOM", "tableType": "M",
+      "position": { "x": 380, "y": 430 },
+      "attributes": [
+        { "id": "a_room_pk",  "termId": "t_roomcd", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_room_dept","termId": "t_deptcd", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_room_use", "termId": "t_useyn",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'Y'" }
+      ],
+      "groupId": "g_hos"
+    },
+    {
+      "id": "e_appt", "ko": "예약", "tableName": "HOS_TBT_APPT", "tableType": "T",
+      "position": { "x": 40, "y": 300 },
+      "attributes": [
+        { "id": "a_appt_doc",  "termId": "t_docno",   "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_appt_ptnt", "termId": "t_ptntno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_appt_dt",   "termId": "t_apptdt",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_appt_tm",   "termId": "t_appttm",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_appt_sts",  "termId": "t_apptsts", "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'BOOK'"},
+        { "id": "a_appt_symp", "termId": "t_sympdesc","isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_hos",
+      "indexes": [
+        { "id": "ix_appt_dt_doc", "name": "IX_APPT_DT_DOC", "columns": ["APPT_DT", "DOC_NO", "APPT_TM"], "unique": false },
+        { "id": "ix_appt_ptnt",   "name": "IX_APPT_PTNT",   "columns": ["PTNT_NO", "APPT_DT"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_chart", "ko": "진료차트", "tableName": "HOS_TBD_CHART", "tableType": "D",
+      "position": { "x": 40, "y": 570 },
+      "attributes": [
+        { "id": "a_chart_pk",   "termId": "t_chartno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_chart_appt_doc","termId":"t_docno",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_chart_appt_ptnt","termId":"t_ptntno","isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_chart_appt_dt","termId":"t_apptdt",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_chart_symp", "termId": "t_sympdesc","isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_chart_diag", "termId": "t_diagcd",  "isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_hos"
+    },
+    {
+      "id": "e_prsc", "ko": "처방", "tableName": "HOS_TBD_PRSC", "tableType": "D",
+      "position": { "x": 370, "y": 600 },
+      "attributes": [
+        { "id": "a_prsc_chart","termId": "t_chartno", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_prsc_seq",  "termId": "t_durcnt",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_prsc_med",  "termId": "t_medcd",   "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_prsc_dose", "termId": "t_doseamt", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_prsc_dur",  "termId": "t_durday",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": "3" },
+        { "id": "a_prsc_cnt",  "termId": "t_durcnt",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": "3" }
+      ],
+      "groupId": "g_hos"
+    },
+    {
+      "id": "e_med", "ko": "약품", "tableName": "HOS_TBM_MED", "tableType": "M",
+      "position": { "x": 720, "y": 80 },
+      "attributes": [
+        { "id": "a_med_pk",  "termId": "t_medcd",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_med_nm",  "termId": "t_mednm",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_med_use", "termId": "t_useyn",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'Y'" }
+      ],
+      "groupId": "g_hos",
+      "indexes": [
+        { "id": "ix_med_nm", "name": "IX_MED_NM", "columns": ["MED_NM"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_pay", "ko": "수납", "tableName": "HOS_TBT_PAY", "tableType": "T",
+      "position": { "x": 720, "y": 300 },
+      "attributes": [
+        { "id": "a_pay_chart","termId": "t_chartno", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_pay_seq",  "termId": "t_durcnt",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_pay_amt",  "termId": "t_payamt",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_pay_dt",   "termId": "t_apptdt",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_pay_insur","termId": "t_insuryn", "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'N'" }
+      ],
+      "groupId": "g_hos",
+      "indexes": [
+        { "id": "ix_pay_dt", "name": "IX_PAY_DT", "columns": ["CHART_NO", "PAY_DT"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_diag", "ko": "진단코드", "tableName": "HOS_TBM_DIAG", "tableType": "M",
+      "position": { "x": 720, "y": 520 },
+      "attributes": [
+        { "id": "a_diag_pk", "termId": "t_diagcd", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_diag_nm", "termId": "t_diagnm", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null }
+      ],
+      "groupId": "g_hos"
+    }
+  ],
+  "relationships": [
+    { "id": "r_doc_dept",    "fromEntityId": "e_doc",   "fromAttrId": "a_doc_dept",    "toEntityId": "e_dept",  "toAttrId": "a_dept_pk",       "type": "many-to-one" },
+    { "id": "r_doc_super",   "fromEntityId": "e_doc",   "fromAttrId": "a_doc_super",   "toEntityId": "e_doc",   "toAttrId": "a_doc_pk",        "type": "many-to-one" },
+    { "id": "r_room_dept",   "fromEntityId": "e_room",  "fromAttrId": "a_room_dept",   "toEntityId": "e_dept",  "toAttrId": "a_dept_pk",       "type": "many-to-one" },
+    { "id": "r_appt_doc",    "fromEntityId": "e_appt",  "fromAttrId": "a_appt_doc",    "toEntityId": "e_doc",   "toAttrId": "a_doc_pk",        "type": "many-to-one" },
+    { "id": "r_appt_ptnt",   "fromEntityId": "e_appt",  "fromAttrId": "a_appt_ptnt",   "toEntityId": "e_ptnt",  "toAttrId": "a_ptnt_pk",       "type": "many-to-one" },
+    { "id": "r_chart_appt",  "fromEntityId": "e_chart", "fromAttrId": "a_chart_appt_doc","toEntityId": "e_appt",  "toAttrId": "a_appt_doc",      "type": "many-to-one" },
+    { "id": "r_chart_diag",  "fromEntityId": "e_chart", "fromAttrId": "a_chart_diag",   "toEntityId": "e_diag",  "toAttrId": "a_diag_pk",       "type": "many-to-one" },
+    { "id": "r_prsc_chart",  "fromEntityId": "e_prsc",  "fromAttrId": "a_prsc_chart",   "toEntityId": "e_chart", "toAttrId": "a_chart_pk",      "type": "many-to-one" },
+    { "id": "r_prsc_med",    "fromEntityId": "e_prsc",  "fromAttrId": "a_prsc_med",     "toEntityId": "e_med",   "toAttrId": "a_med_pk",        "type": "many-to-one" },
+    { "id": "r_pay_chart",   "fromEntityId": "e_pay",   "fromAttrId": "a_pay_chart",    "toEntityId": "e_chart", "toAttrId": "a_chart_pk",      "type": "many-to-one" }
+  ],
+  "tableGroups": [
+    { "id": "g_hos", "name": "병원관리", "prefix": "HOS", "color": "#10b981", "position": { "x": 20, "y": 20 }, "size": { "width": 960, "height": 710 }, "namingEnabled": true }
+  ],
+  "views": [
+    {
+      "id": "v_appt_today",
+      "name": "V_APPT_TODAY",
+      "sql": "SELECT A.APPT_DT, A.APPT_TM, P.PTNT_NM, D.DOC_NM, DP.DEPT_NM, A.APPT_STS\nFROM HOS_TBT_APPT A\n  JOIN HOS_TBM_PTNT P ON A.PTNT_NO = P.PTNT_NO\n  JOIN HOS_TBM_DOC D ON A.DOC_NO = D.DOC_NO\n  JOIN HOS_TBM_DEPT DP ON D.DEPT_CD = DP.DEPT_CD\nWHERE A.APPT_DT = CURRENT_DATE\nORDER BY A.APPT_TM"
+    },
+    {
+      "id": "v_chart_summary",
+      "name": "V_CHART_SUMMARY",
+      "sql": "SELECT C.CHART_NO, P.PTNT_NM, D.DOC_NM, C.SYMP_DESC, DI.DIAG_NM,\n  (SELECT SUM(PAY_AMT) FROM HOS_TBT_PAY PY WHERE PY.CHART_NO = C.CHART_NO) AS TOTAL_PAY\nFROM HOS_TBD_CHART C\n  JOIN HOS_TBM_PTNT P ON C.PTNT_NO = P.PTNT_NO\n  JOIN HOS_TBM_DOC D ON C.DOC_NO = D.DOC_NO\n  LEFT JOIN HOS_TBM_DIAG DI ON C.DIAG_CD = DI.DIAG_CD"
+    },
+    {
+      "id": "v_doc_schedule",
+      "name": "V_DOC_SCHEDULE",
+      "sql": "SELECT D.DOC_NM, DP.DEPT_NM, A.APPT_DT,\n  COUNT(*) AS APPT_CNT,\n  COUNT(CASE WHEN A.APPT_STS = 'DONE' THEN 1 END) AS DONE_CNT\nFROM HOS_TBM_DOC D\n  JOIN HOS_TBM_DEPT DP ON D.DEPT_CD = DP.DEPT_CD\n  LEFT JOIN HOS_TBT_APPT A ON D.DOC_NO = A.DOC_NO\nGROUP BY D.DOC_NM, DP.DEPT_NM, A.APPT_DT\nORDER BY A.APPT_DT, D.DOC_NM"
+    }
+  ]
+}

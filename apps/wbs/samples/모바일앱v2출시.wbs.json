@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "meta": {
+    "name": "모바일 앱 v2.0 출시",
+    "description": "WBS 앱 기능 전시용 샘플. 3수준 분해 · FS/SS/FF/SF 4종 의존 · lag와 lead(음수 lag) · 사내 휴무일 달력 · 고정 일정(manual) · 차단 상태 · 일정 미지정 리프(검증 경고 W6) · 마일스톤 2개를 모두 담았다.",
+    "startDate": "2026-07-13",
+    "createdAt": "2026-07-13T09:00:00.000Z",
+    "updatedAt": "2026-07-22T09:00:00.000Z"
+  },
+  "tasks": [
+    { "id": "p1",     "parentId": null,   "order": 0, "name": "사전 준비",          "start": null,         "duration": null, "effort": null, "progress": 0,   "status": "todo", "collapsed": true },
+    { "id": "p1-a",   "parentId": "p1",   "order": 0, "name": "v1 회고·과제 정리",   "start": "2026-07-13", "duration": 3,    "effort": 18,   "progress": 100, "status": "done", "assignee": "김지원", "actualEffort": 20 },
+    { "id": "p1-b",   "parentId": "p1",   "order": 1, "name": "v2 범위 확정",        "start": "2026-07-16", "duration": 2,    "effort": 12,   "progress": 100, "status": "done", "assignee": "김지원", "actualEffort": 11 },
+    { "id": "p1-ms",  "parentId": "p1",   "order": 2, "name": "범위 동결",           "start": "2026-07-20", "duration": 0,    "effort": null, "progress": 100, "status": "done", "milestone": true },
+
+    { "id": "p2",     "parentId": null,   "order": 1, "name": "설계",               "start": null,         "duration": null, "effort": null, "progress": 0,  "status": "todo" },
+    { "id": "p2-ux",  "parentId": "p2",   "order": 0, "name": "UX 플로우 재설계",    "start": "2026-07-21", "duration": 5,    "effort": 30,   "progress": 80, "status": "doing", "assignee": "박서준" },
+    { "id": "p2-ui",  "parentId": "p2",   "order": 1, "name": "UI 시안",            "start": "2026-07-23", "duration": 6,    "effort": 36,   "progress": 40, "status": "doing", "assignee": "박서준", "note": "UX와 동시 착수(SS) — 플로우 확정 전 비주얼 방향부터 잡는다" },
+    { "id": "p2-api", "parentId": "p2",   "order": 2, "name": "API 스펙 합의",       "start": "2026-07-28", "duration": 4,    "effort": 24,   "progress": 25, "status": "doing", "assignee": "이하늘" },
+
+    { "id": "p3",     "parentId": null,   "order": 2, "name": "구현",               "start": null,         "duration": null, "effort": null, "progress": 0,  "status": "todo" },
+    { "id": "p3-be",  "parentId": "p3",   "order": 0, "name": "백엔드",             "start": null,         "duration": null, "effort": null, "progress": 0,  "status": "todo" },
+    { "id": "p3-be1", "parentId": "p3-be","order": 0, "name": "인증 리팩터",        "start": "2026-08-05", "duration": 6,    "effort": 44,   "progress": 0,  "status": "todo",    "assignee": "이하늘" },
+    { "id": "p3-be2", "parentId": "p3-be","order": 1, "name": "결제 연동",          "start": "2026-08-13", "duration": 8,    "effort": 60,   "progress": 0,  "status": "blocked", "assignee": "이하늘", "note": "PG사 심사 대기 — 심사 완료 전까지 착수 불가" },
+    { "id": "p3-fe",  "parentId": "p3",   "order": 1, "name": "프론트엔드",         "start": null,         "duration": null, "effort": null, "progress": 0,  "status": "todo" },
+    { "id": "p3-fe1", "parentId": "p3-fe","order": 0, "name": "홈·검색 개편",       "start": "2026-08-04", "duration": 7,    "effort": 50,   "progress": 0,  "status": "todo", "assignee": "정우성" },
+    { "id": "p3-fe2", "parentId": "p3-fe","order": 1, "name": "결제 화면",          "start": "2026-08-13", "duration": 5,    "effort": 34,   "progress": 0,  "status": "todo", "assignee": "정우성" },
+    { "id": "p3-doc", "parentId": "p3",   "order": 2, "name": "개발 문서 정리",     "start": null,         "duration": null, "effort": 10,   "progress": 0,  "status": "todo", "note": "일정 미정 — 검증 패널에 W6 경고가 뜨는 상태를 보여주는 행이다" },
+
+    { "id": "p4",     "parentId": null,   "order": 3, "name": "검증",               "start": null,         "duration": null, "effort": null, "progress": 0, "status": "todo" },
+    { "id": "p4-qa",  "parentId": "p4",   "order": 0, "name": "통합 QA",            "start": "2026-08-26", "duration": 8,    "effort": 56,   "progress": 0, "status": "todo", "assignee": "최민아" },
+    { "id": "p4-fix", "parentId": "p4",   "order": 1, "name": "결함 수정",          "start": "2026-08-31", "duration": 6,    "effort": 40,   "progress": 0, "status": "todo", "assignee": "정우성", "note": "QA 종료와 함께 끝나야 한다(FF) — QA 후반부터 겹쳐 진행" },
+    { "id": "p4-beta","parentId": "p4",   "order": 2, "name": "사내 베타",          "start": "2026-09-08", "duration": 5,    "effort": 20,   "progress": 0, "status": "todo", "assignee": "최민아" },
+
+    { "id": "p5",     "parentId": null,   "order": 4, "name": "출시",               "start": null,         "duration": null, "effort": null, "progress": 0, "status": "todo" },
+    { "id": "p5-str", "parentId": "p5",   "order": 0, "name": "스토어 심사 제출",   "start": "2026-09-15", "duration": 3,    "effort": 12,   "progress": 0, "status": "todo", "assignee": "김지원" },
+    { "id": "p5-mkt", "parentId": "p5",   "order": 1, "name": "마케팅 소재 준비",   "start": "2026-09-21", "duration": 5,    "effort": 24,   "progress": 0, "status": "todo", "assignee": "한소희", "scheduleMode": "manual", "note": "외부 대행사 일정에 맞춘 고정 구간 — 스케줄러가 밀지 않는다(manual)" },
+    { "id": "p5-ms",  "parentId": "p5",   "order": 2, "name": "v2.0 정식 출시",     "start": "2026-09-30", "duration": 0,    "effort": null, "progress": 0, "status": "todo", "milestone": true },
+    { "id": "p5-eol", "parentId": "p5",   "order": 3, "name": "v1 지원 종료",       "start": "2026-09-28", "duration": 8,    "effort": 16,   "progress": 0, "status": "todo", "assignee": "이하늘", "note": "SF(시작-종료) 의존의 교과서적 사례 — v2.0이 출시되기 전에는 구버전 지원을 끝낼 수 없다" }
+  ],
+  "links": [
+    { "id": "k1",  "from": "p1-a",   "to": "p1-b",    "type": "FS", "lag": 0 },
+    { "id": "k2",  "from": "p1-b",   "to": "p1-ms",   "type": "FS", "lag": 0 },
+    { "id": "k3",  "from": "p1-ms",  "to": "p2-ux",   "type": "FS", "lag": 0 },
+
+    { "id": "k4",  "from": "p2-ux",  "to": "p2-ui",   "type": "SS", "lag": 2 },
+    { "id": "k5",  "from": "p2-ux",  "to": "p2-api",  "type": "FS", "lag": 0 },
+
+    { "id": "k6",  "from": "p2-api", "to": "p3-be1",  "type": "FS", "lag": 2 },
+    { "id": "k7",  "from": "p2-ui",  "to": "p3-fe1",  "type": "FS", "lag": 2 },
+    { "id": "k8",  "from": "p3-be1", "to": "p3-be2",  "type": "FS", "lag": 0 },
+    { "id": "k9",  "from": "p3-fe1", "to": "p3-fe2",  "type": "FS", "lag": -2 },
+
+    { "id": "k10", "from": "p3-be2", "to": "p4-qa",   "type": "FS", "lag": 0 },
+    { "id": "k11", "from": "p4-qa",  "to": "p4-fix",  "type": "FF", "lag": 0 },
+    { "id": "k12", "from": "p4-fix", "to": "p4-beta", "type": "FS", "lag": 0 },
+
+    { "id": "k13", "from": "p4-beta","to": "p5-str",  "type": "FS", "lag": 0 },
+    { "id": "k14", "from": "p4-beta","to": "p5-mkt",  "type": "FS", "lag": 5 },
+    { "id": "k15", "from": "p5-str", "to": "p5-ms",   "type": "FS", "lag": 3 },
+    { "id": "k16", "from": "p5-ms",  "to": "p5-eol",  "type": "SF", "lag": 5 }
+  ],
+  "calendar": {
+    "workdays": [1, 2, 3, 4, 5],
+    "holidays": ["2026-08-14", "2026-09-18"]
+  }
+}

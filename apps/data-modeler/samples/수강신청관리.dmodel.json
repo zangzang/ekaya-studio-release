@@ -1,0 +1,4428 @@
+{
+  "_history": [
+    {
+      "project": {
+        "domains": [
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_idno",
+            "length": 20,
+            "name": "식별번호",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_name",
+            "length": 100,
+            "name": "명칭",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_code_s",
+            "length": 10,
+            "name": "짧은코드",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_yr",
+            "length": 4,
+            "name": "년도",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_dow",
+            "length": 3,
+            "name": "요일",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "DATE",
+            "default": null,
+            "group": "일시",
+            "id": "d_date",
+            "length": null,
+            "name": "일자",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "INTEGER",
+            "default": null,
+            "group": "숫자",
+            "id": "d_cnt",
+            "length": null,
+            "name": "개수",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "NUMERIC",
+            "default": null,
+            "group": "숫자",
+            "id": "d_score",
+            "length": 5,
+            "name": "점수",
+            "scale": 2,
+            "unit": "점"
+          },
+          {
+            "dataType": "INTEGER",
+            "default": null,
+            "group": "숫자",
+            "id": "d_credit",
+            "length": null,
+            "name": "학점",
+            "scale": null,
+            "unit": "학점"
+          },
+          {
+            "dataType": "CHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_yn",
+            "length": 1,
+            "name": "여부",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "INTEGER",
+            "default": null,
+            "group": "숫자",
+            "id": "d_seq",
+            "length": null,
+            "name": "순번",
+            "scale": null,
+            "unit": null
+          }
+        ],
+        "entities": [
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_std_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_stdno"
+              },
+              {
+                "default": null,
+                "id": "a_std_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_stdnm"
+              },
+              {
+                "default": null,
+                "id": "a_std_dept",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_deptcd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_std",
+            "indexes": [
+              {
+                "columns": [
+                  "STD_NM",
+                  "DEPT_CD"
+                ],
+                "id": "ix_std_nm",
+                "name": "IX_STD_NM",
+                "unique": false
+              }
+            ],
+            "ko": "학생",
+            "position": {
+              "x": 703,
+              "y": 586
+            },
+            "tableName": "UNI_TBM_STD",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_dept_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_deptcd"
+              },
+              {
+                "default": null,
+                "id": "a_dept_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_deptnm"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_dept",
+            "ko": "학과",
+            "position": {
+              "x": 1698,
+              "y": 286.5
+            },
+            "tableName": "UNI_TBM_DEPT",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_prof_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_profno"
+              },
+              {
+                "default": null,
+                "id": "a_prof_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_profnm"
+              },
+              {
+                "default": null,
+                "id": "a_prof_dept",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_deptcd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_prof",
+            "indexes": [
+              {
+                "columns": [
+                  "DEPT_CD",
+                  "PROF_NM"
+                ],
+                "id": "ix_prof_dept",
+                "name": "IX_PROF_DEPT",
+                "unique": false
+              }
+            ],
+            "ko": "교수",
+            "position": {
+              "x": 1375,
+              "y": 311
+            },
+            "tableName": "UNI_TBM_PROF",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_crs_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_crs_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_crsnm"
+              },
+              {
+                "default": "3",
+                "id": "a_crs_credit",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_credit"
+              },
+              {
+                "default": null,
+                "id": "a_crs_dept",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_deptcd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_crs",
+            "indexes": [
+              {
+                "columns": [
+                  "CRS_NM"
+                ],
+                "id": "ix_crs_nm",
+                "name": "IX_CRS_NM",
+                "unique": false
+              }
+            ],
+            "ko": "강좌",
+            "position": {
+              "x": 1377.5,
+              "y": 84
+            },
+            "tableName": "UNI_TBM_CRS",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_prereq_crs",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_prereq_req",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_prereqcd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_prereq",
+            "ko": "선수강좌",
+            "position": {
+              "x": 1021,
+              "y": 106
+            },
+            "tableName": "UNI_TBD_PREREQ",
+            "tableType": "D"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_semcrs_crs",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_yr",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semyr"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_seq",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semseq"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_prof",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_profno"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_clss",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_clsscd"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_dow",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_dowcd"
+              },
+              {
+                "default": "30",
+                "id": "a_semcrs_limit",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_crslimit"
+              },
+              {
+                "default": "'Y'",
+                "id": "a_semcrs_use",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_useyn"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_semcrs",
+            "indexes": [
+              {
+                "columns": [
+                  "SEM_YR",
+                  "SEM_SEQ",
+                  "CLSS_CD",
+                  "DOW_CD"
+                ],
+                "id": "ix_semcrs_clss",
+                "name": "IX_SEMCRS_CLSS",
+                "unique": false
+              },
+              {
+                "columns": [
+                  "PROF_NO",
+                  "SEM_YR",
+                  "SEM_SEQ"
+                ],
+                "id": "ix_semcrs_prof",
+                "name": "IX_SEMCRS_PROF",
+                "unique": false
+              }
+            ],
+            "ko": "개설강좌",
+            "position": {
+              "x": 1039,
+              "y": 270.5
+            },
+            "tableName": "UNI_TBD_SEM_CRS",
+            "tableType": "D"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_reg_std",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_stdno"
+              },
+              {
+                "default": null,
+                "id": "a_reg_crs",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_reg_yr",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semyr"
+              },
+              {
+                "default": null,
+                "id": "a_reg_seq",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semseq"
+              },
+              {
+                "default": null,
+                "id": "a_reg_dt",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_regdt"
+              },
+              {
+                "default": "'ENRL'",
+                "id": "a_reg_sts",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_regsts"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_reg",
+            "indexes": [
+              {
+                "columns": [
+                  "STD_NO",
+                  "SEM_YR",
+                  "SEM_SEQ"
+                ],
+                "id": "ix_reg_std_sem",
+                "name": "IX_REG_STD_SEM",
+                "unique": false
+              }
+            ],
+            "ko": "수강신청",
+            "position": {
+              "x": 385,
+              "y": 282.5
+            },
+            "tableName": "UNI_TBT_REG",
+            "tableType": "T"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_grade_std",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_stdno"
+              },
+              {
+                "default": null,
+                "id": "a_grade_crs",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_grade_yr",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semyr"
+              },
+              {
+                "default": null,
+                "id": "a_grade_seq",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semseq"
+              },
+              {
+                "default": null,
+                "id": "a_grade_attnd",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_attndcnt"
+              },
+              {
+                "default": null,
+                "id": "a_grade_assign",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_assignscore"
+              },
+              {
+                "default": null,
+                "id": "a_grade_exam",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_examscore"
+              },
+              {
+                "default": null,
+                "id": "a_grade_total",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_gradescore"
+              },
+              {
+                "default": null,
+                "id": "a_grade_cd",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_gradecd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_grade",
+            "ko": "성적",
+            "position": {
+              "x": 48,
+              "y": 397
+            },
+            "tableName": "UNI_TBD_GRADE",
+            "tableType": "D"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_clss_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_clsscd"
+              },
+              {
+                "default": null,
+                "id": "a_clss_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_clssnm"
+              },
+              {
+                "default": "50",
+                "id": "a_clss_limit",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_crslimit"
+              },
+              {
+                "default": "'Y'",
+                "id": "a_clss_use",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_useyn"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_clss",
+            "ko": "강의실",
+            "position": {
+              "x": 1375,
+              "y": 473
+            },
+            "tableName": "UNI_TBM_CLSS",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_5",
+                "isNotNull": false,
+                "isPk": true,
+                "isUnique": true,
+                "termId": "t_stdno"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_2",
+            "ko": "새 엔티티",
+            "position": {
+              "x": 388,
+              "y": 598
+            },
+            "tableName": "UNI_NEW",
+            "tableType": "M"
+          }
+        ],
+        "meta": {
+          "createdAt": "2026-06-25T00:00:00.000Z",
+          "name": "수강신청관리",
+          "updatedAt": "2026-06-29T12:38:25.438Z"
+        },
+        "relationships": [
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_std_dept",
+                "toAttrId": "a_dept_pk"
+              }
+            ],
+            "fromEntityId": "e_std",
+            "id": "r_std_dept",
+            "toEntityId": "e_dept",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_prof_dept",
+                "toAttrId": "a_dept_pk"
+              }
+            ],
+            "fromEntityId": "e_prof",
+            "id": "r_prof_dept",
+            "toEntityId": "e_dept",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_crs_dept",
+                "toAttrId": "a_dept_pk"
+              }
+            ],
+            "fromEntityId": "e_crs",
+            "id": "r_crs_dept",
+            "toEntityId": "e_dept",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_prereq_crs",
+                "toAttrId": "a_crs_pk"
+              },
+              {
+                "fromAttrId": "a_prereq_req",
+                "toAttrId": "a_crs_pk"
+              }
+            ],
+            "fromEntityId": "e_prereq",
+            "id": "r_prereq_crs",
+            "toEntityId": "e_crs",
+            "type": "one-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_semcrs_crs",
+                "toAttrId": "a_crs_pk"
+              }
+            ],
+            "fromEntityId": "e_semcrs",
+            "id": "r_semcrs_crs",
+            "toEntityId": "e_crs",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_semcrs_prof",
+                "toAttrId": "a_prof_pk"
+              }
+            ],
+            "fromEntityId": "e_semcrs",
+            "id": "r_semcrs_prof",
+            "toEntityId": "e_prof",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_semcrs_clss",
+                "toAttrId": "a_clss_pk"
+              }
+            ],
+            "fromEntityId": "e_semcrs",
+            "id": "r_semcrs_clss",
+            "toEntityId": "e_clss",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_reg_std",
+                "toAttrId": "a_std_pk"
+              }
+            ],
+            "fromEntityId": "e_reg",
+            "id": "r_reg_std",
+            "toEntityId": "e_std",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_reg_crs",
+                "toAttrId": "a_semcrs_crs"
+              },
+              {
+                "fromAttrId": "a_reg_yr",
+                "toAttrId": "a_semcrs_yr"
+              },
+              {
+                "fromAttrId": "a_reg_seq",
+                "toAttrId": "a_semcrs_seq"
+              }
+            ],
+            "fromEntityId": "e_reg",
+            "id": "r_reg_semcrs",
+            "toEntityId": "e_semcrs",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_grade_std",
+                "toAttrId": "a_reg_std"
+              },
+              {
+                "fromAttrId": "a_grade_crs",
+                "toAttrId": "a_reg_crs"
+              },
+              {
+                "fromAttrId": "a_grade_yr",
+                "toAttrId": "a_reg_yr"
+              },
+              {
+                "fromAttrId": "a_grade_seq",
+                "toAttrId": "a_reg_seq"
+              }
+            ],
+            "fromEntityId": "e_grade",
+            "id": "r_grade_reg",
+            "toEntityId": "e_reg",
+            "type": "one-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_grade_std",
+                "toAttrId": "a_std_pk"
+              }
+            ],
+            "fromEntityId": "e_grade",
+            "id": "r_1",
+            "toEntityId": "e_std",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_5",
+                "toAttrId": "a_std_pk"
+              }
+            ],
+            "fromEntityId": "e_2",
+            "id": "r_6",
+            "toEntityId": "e_std",
+            "type": "one-to-one"
+          }
+        ],
+        "settings": {
+          "defaultPrefix": "TB",
+          "namingPattern": "B"
+        },
+        "tableGroups": [
+          {
+            "color": "#8b5cf6",
+            "id": "g_uni",
+            "name": "대학관리",
+            "namingEnabled": true,
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "prefix": "UNI",
+            "size": {
+              "height": 756,
+              "width": 1999
+            }
+          }
+        ],
+        "terms": [
+          {
+            "columnName": "STD_NO",
+            "domainId": "d_idno",
+            "id": "t_stdno",
+            "ko": "학생번호",
+            "wordIds": [
+              "w_std",
+              "w_no"
+            ]
+          },
+          {
+            "columnName": "STD_NM",
+            "domainId": "d_name",
+            "id": "t_stdnm",
+            "ko": "학생명",
+            "wordIds": [
+              "w_std",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "DEPT_CD",
+            "domainId": "d_code_s",
+            "id": "t_deptcd",
+            "ko": "학과코드",
+            "wordIds": [
+              "w_dept",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "DEPT_NM",
+            "domainId": "d_name",
+            "id": "t_deptnm",
+            "ko": "학과명",
+            "wordIds": [
+              "w_dept",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "PROF_NO",
+            "domainId": "d_idno",
+            "id": "t_profno",
+            "ko": "교수번호",
+            "wordIds": [
+              "w_prof",
+              "w_no"
+            ]
+          },
+          {
+            "columnName": "PROF_NM",
+            "domainId": "d_name",
+            "id": "t_profnm",
+            "ko": "교수명",
+            "wordIds": [
+              "w_prof",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "CRS_CD",
+            "domainId": "d_code_s",
+            "id": "t_crscd",
+            "ko": "강좌코드",
+            "wordIds": [
+              "w_crs",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "CRS_NM",
+            "domainId": "d_name",
+            "id": "t_crsnm",
+            "ko": "강좌명",
+            "wordIds": [
+              "w_crs",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "SEM_YR",
+            "domainId": "d_yr",
+            "id": "t_semyr",
+            "ko": "학기년도",
+            "wordIds": [
+              "w_sem",
+              "w_yr"
+            ]
+          },
+          {
+            "columnName": "SEM_SEQ",
+            "domainId": "d_seq",
+            "id": "t_semseq",
+            "ko": "학기순번",
+            "wordIds": [
+              "w_sem",
+              "w_seq"
+            ]
+          },
+          {
+            "columnName": "CRS_LIMIT",
+            "domainId": "d_cnt",
+            "id": "t_crslimit",
+            "ko": "강좌정원",
+            "wordIds": [
+              "w_crs",
+              "w_limit"
+            ]
+          },
+          {
+            "columnName": "CRDT_CNT",
+            "domainId": "d_credit",
+            "id": "t_credit",
+            "ko": "학점개수",
+            "wordIds": [
+              "w_credit",
+              "w_cnt"
+            ]
+          },
+          {
+            "columnName": "REG_DT",
+            "domainId": "d_date",
+            "id": "t_regdt",
+            "ko": "수강일자",
+            "wordIds": [
+              "w_reg",
+              "w_dt"
+            ]
+          },
+          {
+            "columnName": "REG_STS",
+            "domainId": "d_code_s",
+            "id": "t_regsts",
+            "ko": "수강상태",
+            "wordIds": [
+              "w_reg",
+              "w_sts"
+            ]
+          },
+          {
+            "columnName": "GRD_SCORE",
+            "domainId": "d_score",
+            "id": "t_gradescore",
+            "ko": "성적점수",
+            "wordIds": [
+              "w_grade",
+              "w_score"
+            ]
+          },
+          {
+            "columnName": "GRD_CD",
+            "domainId": "d_code_s",
+            "id": "t_gradecd",
+            "ko": "성적코드",
+            "wordIds": [
+              "w_grade",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "CLSS_CD",
+            "domainId": "d_code_s",
+            "id": "t_clsscd",
+            "ko": "강의실코드",
+            "wordIds": [
+              "w_clss",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "CLSS_NM",
+            "domainId": "d_name",
+            "id": "t_clssnm",
+            "ko": "강의실명",
+            "wordIds": [
+              "w_clss",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "DOW_CD",
+            "domainId": "d_dow",
+            "id": "t_dowcd",
+            "ko": "요일코드",
+            "wordIds": [
+              "w_dow",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "USE_YN",
+            "domainId": "d_yn",
+            "id": "t_useyn",
+            "ko": "사용여부",
+            "wordIds": [
+              "w_use",
+              "w_yn"
+            ]
+          },
+          {
+            "columnName": "ATTND_CNT",
+            "domainId": "d_cnt",
+            "id": "t_attndcnt",
+            "ko": "출석개수",
+            "wordIds": [
+              "w_attnd",
+              "w_cnt"
+            ]
+          },
+          {
+            "columnName": "EXAM_SCORE",
+            "domainId": "d_score",
+            "id": "t_examscore",
+            "ko": "시험점수",
+            "wordIds": [
+              "w_exam",
+              "w_score"
+            ]
+          },
+          {
+            "columnName": "ASGN_SCORE",
+            "domainId": "d_score",
+            "id": "t_assignscore",
+            "ko": "과제점수",
+            "wordIds": [
+              "w_assign",
+              "w_score"
+            ]
+          },
+          {
+            "columnName": "PREREQ_CRS_CD",
+            "domainId": "d_code_s",
+            "id": "t_prereqcd",
+            "ko": "선수강좌코드",
+            "wordIds": [
+              "w_prereq",
+              "w_crs",
+              "w_cd"
+            ]
+          }
+        ],
+        "version": 1,
+        "views": [
+          {
+            "id": "v_reg_list",
+            "name": "V_REG_LIST",
+            "position": {
+              "x": 2079,
+              "y": 0
+            },
+            "sql": "SELECT R.SEM_YR, R.SEM_SEQ, S.STD_NO, S.STD_NM, C.CRS_NM, P.PROF_NM, R.REG_STS\nFROM UNI_TBT_REG R\n  JOIN UNI_TBM_STD S ON R.STD_NO = S.STD_NO\n  JOIN UNI_TBM_CRS C ON R.CRS_CD = C.CRS_CD\n  JOIN UNI_TBD_SEM_CRS SC ON R.CRS_CD = SC.CRS_CD AND R.SEM_YR = SC.SEM_YR AND R.SEM_SEQ = SC.SEM_SEQ\n  JOIN UNI_TBM_PROF P ON SC.PROF_NO = P.PROF_NO\nORDER BY R.SEM_YR DESC, R.SEM_SEQ DESC, S.STD_NO"
+          },
+          {
+            "id": "v_grade_summary",
+            "name": "V_GRADE_SUMMARY",
+            "position": {
+              "x": 2079,
+              "y": 110
+            },
+            "sql": "SELECT S.STD_NO, S.STD_NM, G.SEM_YR, G.SEM_SEQ,\n  SUM(C.CRDT_CNT) AS TOT_CREDIT,\n  ROUND(SUM(G.GRD_SCORE * C.CRDT_CNT) / NULLIF(SUM(C.CRDT_CNT), 0), 2) AS GPA\nFROM UNI_TBD_GRADE G\n  JOIN UNI_TBM_STD S ON G.STD_NO = S.STD_NO\n  JOIN UNI_TBM_CRS C ON G.CRS_CD = C.CRS_CD\nWHERE G.GRD_SCORE IS NOT NULL\nGROUP BY S.STD_NO, S.STD_NM, G.SEM_YR, G.SEM_SEQ\nORDER BY G.SEM_YR DESC, G.SEM_SEQ DESC, GPA DESC"
+          },
+          {
+            "id": "v_crs_open",
+            "name": "V_CRS_OPEN",
+            "position": {
+              "x": 2079,
+              "y": 220
+            },
+            "sql": "SELECT SC.SEM_YR, SC.SEM_SEQ, C.CRS_NM, P.PROF_NM, CL.CLSS_NM, SC.CRS_LIMIT,\n  (SELECT COUNT(*) FROM UNI_TBT_REG R\n   WHERE R.CRS_CD = SC.CRS_CD AND R.SEM_YR = SC.SEM_YR AND R.SEM_SEQ = SC.SEM_SEQ) AS REG_CNT\nFROM UNI_TBD_SEM_CRS SC\n  JOIN UNI_TBM_CRS C ON SC.CRS_CD = C.CRS_CD\n  JOIN UNI_TBM_PROF P ON SC.PROF_NO = P.PROF_NO\n  JOIN UNI_TBM_CLSS CL ON SC.CLSS_CD = CL.CLSS_CD\nWHERE SC.USE_YN = 'Y'\nORDER BY SC.SEM_YR DESC, SC.SEM_SEQ DESC, C.CRS_NM"
+          },
+          {
+            "id": "v_prereq_tree",
+            "name": "V_PREREQ_TREE",
+            "position": {
+              "x": 2079,
+              "y": 330
+            },
+            "sql": "SELECT C1.CRS_NM AS COURSE, C2.CRS_NM AS REQUIRES\nFROM UNI_TBD_PREREQ P\n  JOIN UNI_TBM_CRS C1 ON P.CRS_CD = C1.CRS_CD\n  JOIN UNI_TBM_CRS C2 ON P.PREREQ_CRS_CD = C2.CRS_CD\nORDER BY C1.CRS_NM"
+          }
+        ],
+        "words": [
+          {
+            "abbr": "STD",
+            "en": "Student",
+            "forbidden": false,
+            "id": "w_std",
+            "isFormat": false,
+            "ko": "학생",
+            "synonyms": []
+          },
+          {
+            "abbr": "PROF",
+            "en": "Professor",
+            "forbidden": false,
+            "id": "w_prof",
+            "isFormat": false,
+            "ko": "교수",
+            "synonyms": [
+              "강사"
+            ]
+          },
+          {
+            "abbr": "CRS",
+            "en": "Course",
+            "forbidden": false,
+            "id": "w_crs",
+            "isFormat": false,
+            "ko": "강좌",
+            "synonyms": [
+              "과목"
+            ]
+          },
+          {
+            "abbr": "REG",
+            "en": "Registration",
+            "forbidden": false,
+            "id": "w_reg",
+            "isFormat": false,
+            "ko": "수강",
+            "synonyms": [
+              "신청"
+            ]
+          },
+          {
+            "abbr": "GRD",
+            "en": "Grade",
+            "forbidden": false,
+            "id": "w_grade",
+            "isFormat": false,
+            "ko": "성적",
+            "synonyms": [
+              "평점"
+            ]
+          },
+          {
+            "abbr": "DEPT",
+            "en": "Department",
+            "forbidden": false,
+            "id": "w_dept",
+            "isFormat": false,
+            "ko": "학과",
+            "synonyms": [
+              "전공"
+            ]
+          },
+          {
+            "abbr": "SEM",
+            "en": "Semester",
+            "forbidden": false,
+            "id": "w_sem",
+            "isFormat": false,
+            "ko": "학기",
+            "synonyms": []
+          },
+          {
+            "abbr": "CLSS",
+            "en": "Classroom",
+            "forbidden": false,
+            "id": "w_clss",
+            "isFormat": false,
+            "ko": "강의실",
+            "synonyms": [
+              "교실"
+            ]
+          },
+          {
+            "abbr": "PREREQ",
+            "en": "Prerequisite",
+            "forbidden": false,
+            "id": "w_prereq",
+            "isFormat": false,
+            "ko": "선수",
+            "synonyms": []
+          },
+          {
+            "abbr": "USE",
+            "en": "Use",
+            "forbidden": false,
+            "id": "w_use",
+            "isFormat": false,
+            "ko": "사용",
+            "synonyms": []
+          },
+          {
+            "abbr": "CRDT",
+            "en": "Credit",
+            "forbidden": false,
+            "id": "w_credit",
+            "isFormat": false,
+            "ko": "학점",
+            "synonyms": []
+          },
+          {
+            "abbr": "ATTND",
+            "en": "Attendance",
+            "forbidden": false,
+            "id": "w_attnd",
+            "isFormat": false,
+            "ko": "출석",
+            "synonyms": []
+          },
+          {
+            "abbr": "ASGN",
+            "en": "Assignment",
+            "forbidden": false,
+            "id": "w_assign",
+            "isFormat": false,
+            "ko": "과제",
+            "synonyms": []
+          },
+          {
+            "abbr": "EXAM",
+            "en": "Exam",
+            "forbidden": false,
+            "id": "w_exam",
+            "isFormat": false,
+            "ko": "시험",
+            "synonyms": [
+              "고사"
+            ]
+          },
+          {
+            "abbr": "LIMIT",
+            "en": "Limit",
+            "forbidden": false,
+            "id": "w_limit",
+            "isFormat": true,
+            "ko": "정원",
+            "synonyms": []
+          },
+          {
+            "abbr": "NO",
+            "en": "Number",
+            "forbidden": false,
+            "id": "w_no",
+            "isFormat": true,
+            "ko": "번호",
+            "synonyms": []
+          },
+          {
+            "abbr": "NM",
+            "en": "Name",
+            "forbidden": false,
+            "id": "w_nm",
+            "isFormat": true,
+            "ko": "명",
+            "synonyms": []
+          },
+          {
+            "abbr": "CD",
+            "en": "Code",
+            "forbidden": false,
+            "id": "w_cd",
+            "isFormat": true,
+            "ko": "코드",
+            "synonyms": []
+          },
+          {
+            "abbr": "DT",
+            "en": "Date",
+            "forbidden": false,
+            "id": "w_dt",
+            "isFormat": true,
+            "ko": "일자",
+            "synonyms": []
+          },
+          {
+            "abbr": "YN",
+            "en": "YesNo",
+            "forbidden": false,
+            "id": "w_yn",
+            "isFormat": true,
+            "ko": "여부",
+            "synonyms": []
+          },
+          {
+            "abbr": "SEQ",
+            "en": "Sequence",
+            "forbidden": false,
+            "id": "w_seq",
+            "isFormat": true,
+            "ko": "순번",
+            "synonyms": []
+          },
+          {
+            "abbr": "CNT",
+            "en": "Count",
+            "forbidden": false,
+            "id": "w_cnt",
+            "isFormat": true,
+            "ko": "개수",
+            "synonyms": []
+          },
+          {
+            "abbr": "SCORE",
+            "en": "Score",
+            "forbidden": false,
+            "id": "w_score",
+            "isFormat": true,
+            "ko": "점수",
+            "synonyms": []
+          },
+          {
+            "abbr": "YR",
+            "en": "Year",
+            "forbidden": false,
+            "id": "w_yr",
+            "isFormat": true,
+            "ko": "년도",
+            "synonyms": []
+          },
+          {
+            "abbr": "DOW",
+            "en": "DayOfWeek",
+            "forbidden": false,
+            "id": "w_dow",
+            "isFormat": false,
+            "ko": "요일",
+            "synonyms": []
+          },
+          {
+            "abbr": "STS",
+            "en": "Status",
+            "forbidden": false,
+            "id": "w_sts",
+            "isFormat": true,
+            "ko": "상태",
+            "synonyms": []
+          }
+        ]
+      },
+      "savedAt": "2026-06-29T12:38:25.438Z",
+      "type": "snapshot"
+    },
+    {
+      "description": "vvvv",
+      "savedAt": "2026-06-29T13:20:40.983Z",
+      "title": "ccc",
+      "type": "diff"
+    },
+    {
+      "description": "cccc",
+      "savedAt": "2026-06-29T13:20:59.240Z",
+      "title": "bbbb",
+      "type": "diff"
+    },
+    {
+      "description": "bvbvbvbv",
+      "savedAt": "2026-06-29T13:21:26.268Z",
+      "title": "vbbnvb",
+      "type": "diff"
+    },
+    {
+      "description": "fsdfsdfsd",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entities/9/attributes/0/isPk",
+          "value": false
+        },
+        {
+          "op": "add",
+          "path": "/entities/9/attributes/1",
+          "value": {
+            "default": null,
+            "id": "a_1",
+            "isNotNull": false,
+            "isPk": false,
+            "isUnique": false,
+            "termId": "t_crscd"
+          }
+        },
+        {
+          "op": "replace",
+          "path": "/meta/updatedAt",
+          "value": "2026-06-29T13:22:00.438Z"
+        }
+      ],
+      "savedAt": "2026-06-29T13:22:00.438Z",
+      "title": "vvfsfsd",
+      "type": "diff"
+    },
+    {
+      "description": "vcxvcxvxcvxcvxcv",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entities/9/attributes/0/isNotNull",
+          "value": true
+        },
+        {
+          "op": "replace",
+          "path": "/entities/9/attributes/0/isPk",
+          "value": true
+        },
+        {
+          "op": "add",
+          "path": "/entities/9/attributes/2",
+          "value": {
+            "default": null,
+            "id": "a_1",
+            "isNotNull": false,
+            "isPk": false,
+            "isUnique": false,
+            "termId": "t_crsnm"
+          }
+        },
+        {
+          "op": "replace",
+          "path": "/meta/updatedAt",
+          "value": "2026-06-29T13:32:29.915Z"
+        }
+      ],
+      "savedAt": "2026-06-29T13:32:29.915Z",
+      "title": "vvcxvcxvcx",
+      "type": "diff"
+    },
+    {
+      "description": "vvvvv",
+      "patch": [
+        {
+          "op": "add",
+          "path": "/entities/9/attributes/3",
+          "value": {
+            "default": null,
+            "id": "a_2",
+            "isNotNull": false,
+            "isPk": false,
+            "isUnique": false,
+            "termId": "t_deptnm"
+          }
+        },
+        {
+          "op": "replace",
+          "path": "/meta/updatedAt",
+          "value": "2026-06-29T13:33:06.670Z"
+        }
+      ],
+      "savedAt": "2026-06-29T13:33:06.670Z",
+      "title": "vvv",
+      "type": "diff"
+    },
+    {
+      "description": "학과코드 추가",
+      "patch": [
+        {
+          "op": "add",
+          "path": "/entities/9/attributes/4",
+          "value": {
+            "default": null,
+            "id": "a_3",
+            "isNotNull": false,
+            "isPk": false,
+            "isUnique": false,
+            "termId": "t_deptcd"
+          }
+        },
+        {
+          "op": "replace",
+          "path": "/meta/updatedAt",
+          "value": "2026-06-29T13:33:32.706Z"
+        }
+      ],
+      "savedAt": "2026-06-29T13:33:32.706Z",
+      "title": "학과코드 추가",
+      "type": "diff"
+    },
+    {
+      "description": "",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/meta/updatedAt",
+          "value": "2026-06-29T14:03:43.624Z"
+        }
+      ],
+      "savedAt": "2026-06-29T14:03:43.624Z",
+      "title": "",
+      "type": "diff"
+    },
+    {
+      "description": "새 엔티티 2",
+      "patch": [
+        {
+          "op": "replace",
+          "path": "/entities/0/position/x",
+          "value": 688.4167896318031
+        },
+        {
+          "op": "replace",
+          "path": "/entities/0/position/y",
+          "value": 664.9688883357785
+        },
+        {
+          "op": "replace",
+          "path": "/entities/1/position/x",
+          "value": 1683.416789631803
+        },
+        {
+          "op": "replace",
+          "path": "/entities/1/position/y",
+          "value": 293.9688883357785
+        },
+        {
+          "op": "replace",
+          "path": "/entities/2/position/x",
+          "value": 1360.416789631803
+        },
+        {
+          "op": "replace",
+          "path": "/entities/2/position/y",
+          "value": 301.9688883357785
+        },
+        {
+          "op": "replace",
+          "path": "/entities/3/position/x",
+          "value": 1362.916789631803
+        },
+        {
+          "op": "replace",
+          "path": "/entities/3/position/y",
+          "value": 61.96888833577851
+        },
+        {
+          "op": "replace",
+          "path": "/entities/4/position/x",
+          "value": 1006.4167896318032
+        },
+        {
+          "op": "replace",
+          "path": "/entities/4/position/y",
+          "value": 73.96888833577852
+        },
+        {
+          "op": "replace",
+          "path": "/entities/5/position/x",
+          "value": 1024.416789631803
+        },
+        {
+          "op": "replace",
+          "path": "/entities/5/position/y",
+          "value": 246.9688883357785
+        },
+        {
+          "op": "replace",
+          "path": "/entities/6/position/x",
+          "value": 367.9167896318031
+        },
+        {
+          "op": "replace",
+          "path": "/entities/6/position/y",
+          "value": 149.4688883357785
+        },
+        {
+          "op": "replace",
+          "path": "/entities/7/position/x",
+          "value": 28.416789631803113
+        },
+        {
+          "op": "replace",
+          "path": "/entities/7/position/y",
+          "value": 317.2188883357785
+        },
+        {
+          "op": "replace",
+          "path": "/entities/8/position/x",
+          "value": 1360.416789631803
+        },
+        {
+          "op": "replace",
+          "path": "/entities/8/position/y",
+          "value": 496.9688883357785
+        },
+        {
+          "op": "add",
+          "path": "/entities/9/attributes/5",
+          "value": {
+            "default": null,
+            "id": "a_4",
+            "isNotNull": false,
+            "isPk": false,
+            "isUnique": false,
+            "termId": "t_stdnm"
+          }
+        },
+        {
+          "op": "replace",
+          "path": "/entities/9/position/x",
+          "value": 365.4167896318031
+        },
+        {
+          "op": "replace",
+          "path": "/entities/9/position/y",
+          "value": 561.7188883357785
+        },
+        {
+          "op": "add",
+          "path": "/entities/10",
+          "value": {
+            "attributes": [],
+            "groupId": null,
+            "id": "e_1",
+            "ko": "새 엔티티 2",
+            "position": {
+              "x": 137.7287780417904,
+              "y": -254.53124635181712
+            },
+            "tableName": "TB_NEW",
+            "tableType": "M"
+          }
+        },
+        {
+          "op": "replace",
+          "path": "/meta/updatedAt",
+          "value": "2026-06-29T14:04:21.073Z"
+        },
+        {
+          "op": "replace",
+          "path": "/tableGroups/0/position/x",
+          "value": -19.583210368196887
+        },
+        {
+          "op": "replace",
+          "path": "/tableGroups/0/position/y",
+          "value": -22.031111664221488
+        },
+        {
+          "op": "replace",
+          "path": "/tableGroups/0/size/height",
+          "value": 890
+        },
+        {
+          "op": "replace",
+          "path": "/tableGroups/0/size/width",
+          "value": 2004
+        },
+        {
+          "op": "replace",
+          "path": "/views/0/position/x",
+          "value": 2084
+        },
+        {
+          "op": "replace",
+          "path": "/views/1/position/x",
+          "value": 2084
+        },
+        {
+          "op": "replace",
+          "path": "/views/2/position/x",
+          "value": 2084
+        },
+        {
+          "op": "replace",
+          "path": "/views/3/position/x",
+          "value": 2084
+        }
+      ],
+      "savedAt": "2026-06-29T14:04:21.073Z",
+      "title": "새 엔티티 2",
+      "type": "diff"
+    },
+    {
+      "description": "엔터티제거",
+      "project": {
+        "domains": [
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_idno",
+            "length": 20,
+            "name": "식별번호",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_name",
+            "length": 100,
+            "name": "명칭",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_code_s",
+            "length": 10,
+            "name": "짧은코드",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_yr",
+            "length": 4,
+            "name": "년도",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "VARCHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_dow",
+            "length": 3,
+            "name": "요일",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "DATE",
+            "default": null,
+            "group": "일시",
+            "id": "d_date",
+            "length": null,
+            "name": "일자",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "INTEGER",
+            "default": null,
+            "group": "숫자",
+            "id": "d_cnt",
+            "length": null,
+            "name": "개수",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "NUMERIC",
+            "default": null,
+            "group": "숫자",
+            "id": "d_score",
+            "length": 5,
+            "name": "점수",
+            "scale": 2,
+            "unit": "점"
+          },
+          {
+            "dataType": "INTEGER",
+            "default": null,
+            "group": "숫자",
+            "id": "d_credit",
+            "length": null,
+            "name": "학점",
+            "scale": null,
+            "unit": "학점"
+          },
+          {
+            "dataType": "CHAR",
+            "default": null,
+            "group": "문자",
+            "id": "d_yn",
+            "length": 1,
+            "name": "여부",
+            "scale": null,
+            "unit": null
+          },
+          {
+            "dataType": "INTEGER",
+            "default": null,
+            "group": "숫자",
+            "id": "d_seq",
+            "length": null,
+            "name": "순번",
+            "scale": null,
+            "unit": null
+          }
+        ],
+        "entities": [
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_std_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_stdno"
+              },
+              {
+                "default": null,
+                "id": "a_std_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_stdnm"
+              },
+              {
+                "default": null,
+                "id": "a_std_dept",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_deptcd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_std",
+            "indexes": [
+              {
+                "columns": [
+                  "STD_NM",
+                  "DEPT_CD"
+                ],
+                "id": "ix_std_nm",
+                "name": "IX_STD_NM",
+                "unique": false
+              }
+            ],
+            "ko": "학생",
+            "position": {
+              "x": 688.4167896318031,
+              "y": 664.9688883357785
+            },
+            "tableName": "UNI_TBM_STD",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_dept_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_deptcd"
+              },
+              {
+                "default": null,
+                "id": "a_dept_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_deptnm"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_dept",
+            "ko": "학과",
+            "position": {
+              "x": 1683.416789631803,
+              "y": 293.9688883357785
+            },
+            "tableName": "UNI_TBM_DEPT",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_prof_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_profno"
+              },
+              {
+                "default": null,
+                "id": "a_prof_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_profnm"
+              },
+              {
+                "default": null,
+                "id": "a_prof_dept",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_deptcd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_prof",
+            "indexes": [
+              {
+                "columns": [
+                  "DEPT_CD",
+                  "PROF_NM"
+                ],
+                "id": "ix_prof_dept",
+                "name": "IX_PROF_DEPT",
+                "unique": false
+              }
+            ],
+            "ko": "교수",
+            "position": {
+              "x": 1360.416789631803,
+              "y": 301.9688883357785
+            },
+            "tableName": "UNI_TBM_PROF",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_crs_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_crs_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_crsnm"
+              },
+              {
+                "default": "3",
+                "id": "a_crs_credit",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_credit"
+              },
+              {
+                "default": null,
+                "id": "a_crs_dept",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_deptcd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_crs",
+            "indexes": [
+              {
+                "columns": [
+                  "CRS_NM"
+                ],
+                "id": "ix_crs_nm",
+                "name": "IX_CRS_NM",
+                "unique": false
+              }
+            ],
+            "ko": "강좌",
+            "position": {
+              "x": 1362.916789631803,
+              "y": 61.96888833577851
+            },
+            "tableName": "UNI_TBM_CRS",
+            "tableType": "M"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_prereq_crs",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_prereq_req",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_prereqcd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_prereq",
+            "ko": "선수강좌",
+            "position": {
+              "x": 1006.4167896318032,
+              "y": 73.96888833577852
+            },
+            "tableName": "UNI_TBD_PREREQ",
+            "tableType": "D"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_semcrs_crs",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_yr",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semyr"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_seq",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semseq"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_prof",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_profno"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_clss",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_clsscd"
+              },
+              {
+                "default": null,
+                "id": "a_semcrs_dow",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_dowcd"
+              },
+              {
+                "default": "30",
+                "id": "a_semcrs_limit",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_crslimit"
+              },
+              {
+                "default": "'Y'",
+                "id": "a_semcrs_use",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_useyn"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_semcrs",
+            "indexes": [
+              {
+                "columns": [
+                  "SEM_YR",
+                  "SEM_SEQ",
+                  "CLSS_CD",
+                  "DOW_CD"
+                ],
+                "id": "ix_semcrs_clss",
+                "name": "IX_SEMCRS_CLSS",
+                "unique": false
+              },
+              {
+                "columns": [
+                  "PROF_NO",
+                  "SEM_YR",
+                  "SEM_SEQ"
+                ],
+                "id": "ix_semcrs_prof",
+                "name": "IX_SEMCRS_PROF",
+                "unique": false
+              }
+            ],
+            "ko": "개설강좌",
+            "position": {
+              "x": 1024.416789631803,
+              "y": 246.9688883357785
+            },
+            "tableName": "UNI_TBD_SEM_CRS",
+            "tableType": "D"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_reg_std",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_stdno"
+              },
+              {
+                "default": null,
+                "id": "a_reg_crs",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_reg_yr",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semyr"
+              },
+              {
+                "default": null,
+                "id": "a_reg_seq",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semseq"
+              },
+              {
+                "default": null,
+                "id": "a_reg_dt",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_regdt"
+              },
+              {
+                "default": "'ENRL'",
+                "id": "a_reg_sts",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_regsts"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_reg",
+            "indexes": [
+              {
+                "columns": [
+                  "STD_NO",
+                  "SEM_YR",
+                  "SEM_SEQ"
+                ],
+                "id": "ix_reg_std_sem",
+                "name": "IX_REG_STD_SEM",
+                "unique": false
+              }
+            ],
+            "ko": "수강신청",
+            "position": {
+              "x": 367.9167896318031,
+              "y": 149.4688883357785
+            },
+            "tableName": "UNI_TBT_REG",
+            "tableType": "T"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_grade_std",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_stdno"
+              },
+              {
+                "default": null,
+                "id": "a_grade_crs",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_crscd"
+              },
+              {
+                "default": null,
+                "id": "a_grade_yr",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semyr"
+              },
+              {
+                "default": null,
+                "id": "a_grade_seq",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_semseq"
+              },
+              {
+                "default": null,
+                "id": "a_grade_attnd",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_attndcnt"
+              },
+              {
+                "default": null,
+                "id": "a_grade_assign",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_assignscore"
+              },
+              {
+                "default": null,
+                "id": "a_grade_exam",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_examscore"
+              },
+              {
+                "default": null,
+                "id": "a_grade_total",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_gradescore"
+              },
+              {
+                "default": null,
+                "id": "a_grade_cd",
+                "isNotNull": false,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_gradecd"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_grade",
+            "ko": "성적",
+            "position": {
+              "x": 28.416789631803113,
+              "y": 317.2188883357785
+            },
+            "tableName": "UNI_TBD_GRADE",
+            "tableType": "D"
+          },
+          {
+            "attributes": [
+              {
+                "default": null,
+                "id": "a_clss_pk",
+                "isNotNull": true,
+                "isPk": true,
+                "isUnique": false,
+                "termId": "t_clsscd"
+              },
+              {
+                "default": null,
+                "id": "a_clss_nm",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_clssnm"
+              },
+              {
+                "default": "50",
+                "id": "a_clss_limit",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_crslimit"
+              },
+              {
+                "default": "'Y'",
+                "id": "a_clss_use",
+                "isNotNull": true,
+                "isPk": false,
+                "isUnique": false,
+                "termId": "t_useyn"
+              }
+            ],
+            "groupId": "g_uni",
+            "id": "e_clss",
+            "ko": "강의실",
+            "position": {
+              "x": 1360.416789631803,
+              "y": 496.9688883357785
+            },
+            "tableName": "UNI_TBM_CLSS",
+            "tableType": "M"
+          },
+          {
+            "attributes": [],
+            "groupId": null,
+            "id": "e_1",
+            "ko": "새 엔티티 2",
+            "position": {
+              "x": 137.7287780417904,
+              "y": -254.53124635181712
+            },
+            "tableName": "TB_NEW",
+            "tableType": "M"
+          }
+        ],
+        "meta": {
+          "createdAt": "2026-06-25T00:00:00.000Z",
+          "name": "수강신청관리",
+          "updatedAt": "2026-06-29T14:19:01.265Z"
+        },
+        "relationships": [
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_std_dept",
+                "toAttrId": "a_dept_pk"
+              }
+            ],
+            "fromEntityId": "e_std",
+            "id": "r_std_dept",
+            "toEntityId": "e_dept",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_prof_dept",
+                "toAttrId": "a_dept_pk"
+              }
+            ],
+            "fromEntityId": "e_prof",
+            "id": "r_prof_dept",
+            "toEntityId": "e_dept",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_crs_dept",
+                "toAttrId": "a_dept_pk"
+              }
+            ],
+            "fromEntityId": "e_crs",
+            "id": "r_crs_dept",
+            "toEntityId": "e_dept",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_prereq_crs",
+                "toAttrId": "a_crs_pk"
+              },
+              {
+                "fromAttrId": "a_prereq_req",
+                "toAttrId": "a_crs_pk"
+              }
+            ],
+            "fromEntityId": "e_prereq",
+            "id": "r_prereq_crs",
+            "toEntityId": "e_crs",
+            "type": "one-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_semcrs_crs",
+                "toAttrId": "a_crs_pk"
+              }
+            ],
+            "fromEntityId": "e_semcrs",
+            "id": "r_semcrs_crs",
+            "toEntityId": "e_crs",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_semcrs_prof",
+                "toAttrId": "a_prof_pk"
+              }
+            ],
+            "fromEntityId": "e_semcrs",
+            "id": "r_semcrs_prof",
+            "toEntityId": "e_prof",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_semcrs_clss",
+                "toAttrId": "a_clss_pk"
+              }
+            ],
+            "fromEntityId": "e_semcrs",
+            "id": "r_semcrs_clss",
+            "toEntityId": "e_clss",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_reg_std",
+                "toAttrId": "a_std_pk"
+              }
+            ],
+            "fromEntityId": "e_reg",
+            "id": "r_reg_std",
+            "toEntityId": "e_std",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_reg_crs",
+                "toAttrId": "a_semcrs_crs"
+              },
+              {
+                "fromAttrId": "a_reg_yr",
+                "toAttrId": "a_semcrs_yr"
+              },
+              {
+                "fromAttrId": "a_reg_seq",
+                "toAttrId": "a_semcrs_seq"
+              }
+            ],
+            "fromEntityId": "e_reg",
+            "id": "r_reg_semcrs",
+            "toEntityId": "e_semcrs",
+            "type": "many-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_grade_std",
+                "toAttrId": "a_reg_std"
+              },
+              {
+                "fromAttrId": "a_grade_crs",
+                "toAttrId": "a_reg_crs"
+              },
+              {
+                "fromAttrId": "a_grade_yr",
+                "toAttrId": "a_reg_yr"
+              },
+              {
+                "fromAttrId": "a_grade_seq",
+                "toAttrId": "a_reg_seq"
+              }
+            ],
+            "fromEntityId": "e_grade",
+            "id": "r_grade_reg",
+            "toEntityId": "e_reg",
+            "type": "one-to-one"
+          },
+          {
+            "columnPairs": [
+              {
+                "fromAttrId": "a_grade_std",
+                "toAttrId": "a_std_pk"
+              }
+            ],
+            "fromEntityId": "e_grade",
+            "id": "r_1",
+            "toEntityId": "e_std",
+            "type": "many-to-one"
+          }
+        ],
+        "settings": {
+          "defaultPrefix": "TB",
+          "namingPattern": "B"
+        },
+        "tableGroups": [
+          {
+            "color": "#8b5cf6",
+            "id": "g_uni",
+            "name": "대학관리",
+            "namingEnabled": true,
+            "position": {
+              "x": -19.583210368196887,
+              "y": -22.031111664221488
+            },
+            "prefix": "UNI",
+            "size": {
+              "height": 890,
+              "width": 2004
+            }
+          }
+        ],
+        "terms": [
+          {
+            "columnName": "STD_NO",
+            "domainId": "d_idno",
+            "id": "t_stdno",
+            "ko": "학생번호",
+            "wordIds": [
+              "w_std",
+              "w_no"
+            ]
+          },
+          {
+            "columnName": "STD_NM",
+            "domainId": "d_name",
+            "id": "t_stdnm",
+            "ko": "학생명",
+            "wordIds": [
+              "w_std",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "DEPT_CD",
+            "domainId": "d_code_s",
+            "id": "t_deptcd",
+            "ko": "학과코드",
+            "wordIds": [
+              "w_dept",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "DEPT_NM",
+            "domainId": "d_name",
+            "id": "t_deptnm",
+            "ko": "학과명",
+            "wordIds": [
+              "w_dept",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "PROF_NO",
+            "domainId": "d_idno",
+            "id": "t_profno",
+            "ko": "교수번호",
+            "wordIds": [
+              "w_prof",
+              "w_no"
+            ]
+          },
+          {
+            "columnName": "PROF_NM",
+            "domainId": "d_name",
+            "id": "t_profnm",
+            "ko": "교수명",
+            "wordIds": [
+              "w_prof",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "CRS_CD",
+            "domainId": "d_code_s",
+            "id": "t_crscd",
+            "ko": "강좌코드",
+            "wordIds": [
+              "w_crs",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "CRS_NM",
+            "domainId": "d_name",
+            "id": "t_crsnm",
+            "ko": "강좌명",
+            "wordIds": [
+              "w_crs",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "SEM_YR",
+            "domainId": "d_yr",
+            "id": "t_semyr",
+            "ko": "학기년도",
+            "wordIds": [
+              "w_sem",
+              "w_yr"
+            ]
+          },
+          {
+            "columnName": "SEM_SEQ",
+            "domainId": "d_seq",
+            "id": "t_semseq",
+            "ko": "학기순번",
+            "wordIds": [
+              "w_sem",
+              "w_seq"
+            ]
+          },
+          {
+            "columnName": "CRS_LIMIT",
+            "domainId": "d_cnt",
+            "id": "t_crslimit",
+            "ko": "강좌정원",
+            "wordIds": [
+              "w_crs",
+              "w_limit"
+            ]
+          },
+          {
+            "columnName": "CRDT_CNT",
+            "domainId": "d_credit",
+            "id": "t_credit",
+            "ko": "학점개수",
+            "wordIds": [
+              "w_credit",
+              "w_cnt"
+            ]
+          },
+          {
+            "columnName": "REG_DT",
+            "domainId": "d_date",
+            "id": "t_regdt",
+            "ko": "수강일자",
+            "wordIds": [
+              "w_reg",
+              "w_dt"
+            ]
+          },
+          {
+            "columnName": "REG_STS",
+            "domainId": "d_code_s",
+            "id": "t_regsts",
+            "ko": "수강상태",
+            "wordIds": [
+              "w_reg",
+              "w_sts"
+            ]
+          },
+          {
+            "columnName": "GRD_SCORE",
+            "domainId": "d_score",
+            "id": "t_gradescore",
+            "ko": "성적점수",
+            "wordIds": [
+              "w_grade",
+              "w_score"
+            ]
+          },
+          {
+            "columnName": "GRD_CD",
+            "domainId": "d_code_s",
+            "id": "t_gradecd",
+            "ko": "성적코드",
+            "wordIds": [
+              "w_grade",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "CLSS_CD",
+            "domainId": "d_code_s",
+            "id": "t_clsscd",
+            "ko": "강의실코드",
+            "wordIds": [
+              "w_clss",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "CLSS_NM",
+            "domainId": "d_name",
+            "id": "t_clssnm",
+            "ko": "강의실명",
+            "wordIds": [
+              "w_clss",
+              "w_nm"
+            ]
+          },
+          {
+            "columnName": "DOW_CD",
+            "domainId": "d_dow",
+            "id": "t_dowcd",
+            "ko": "요일코드",
+            "wordIds": [
+              "w_dow",
+              "w_cd"
+            ]
+          },
+          {
+            "columnName": "USE_YN",
+            "domainId": "d_yn",
+            "id": "t_useyn",
+            "ko": "사용여부",
+            "wordIds": [
+              "w_use",
+              "w_yn"
+            ]
+          },
+          {
+            "columnName": "ATTND_CNT",
+            "domainId": "d_cnt",
+            "id": "t_attndcnt",
+            "ko": "출석개수",
+            "wordIds": [
+              "w_attnd",
+              "w_cnt"
+            ]
+          },
+          {
+            "columnName": "EXAM_SCORE",
+            "domainId": "d_score",
+            "id": "t_examscore",
+            "ko": "시험점수",
+            "wordIds": [
+              "w_exam",
+              "w_score"
+            ]
+          },
+          {
+            "columnName": "ASGN_SCORE",
+            "domainId": "d_score",
+            "id": "t_assignscore",
+            "ko": "과제점수",
+            "wordIds": [
+              "w_assign",
+              "w_score"
+            ]
+          },
+          {
+            "columnName": "PREREQ_CRS_CD",
+            "domainId": "d_code_s",
+            "id": "t_prereqcd",
+            "ko": "선수강좌코드",
+            "wordIds": [
+              "w_prereq",
+              "w_crs",
+              "w_cd"
+            ]
+          }
+        ],
+        "version": 1,
+        "views": [
+          {
+            "id": "v_reg_list",
+            "name": "V_REG_LIST",
+            "position": {
+              "x": 2084,
+              "y": 0
+            },
+            "sql": "SELECT R.SEM_YR, R.SEM_SEQ, S.STD_NO, S.STD_NM, C.CRS_NM, P.PROF_NM, R.REG_STS\nFROM UNI_TBT_REG R\n  JOIN UNI_TBM_STD S ON R.STD_NO = S.STD_NO\n  JOIN UNI_TBM_CRS C ON R.CRS_CD = C.CRS_CD\n  JOIN UNI_TBD_SEM_CRS SC ON R.CRS_CD = SC.CRS_CD AND R.SEM_YR = SC.SEM_YR AND R.SEM_SEQ = SC.SEM_SEQ\n  JOIN UNI_TBM_PROF P ON SC.PROF_NO = P.PROF_NO\nORDER BY R.SEM_YR DESC, R.SEM_SEQ DESC, S.STD_NO"
+          },
+          {
+            "id": "v_grade_summary",
+            "name": "V_GRADE_SUMMARY",
+            "position": {
+              "x": 2084,
+              "y": 110
+            },
+            "sql": "SELECT S.STD_NO, S.STD_NM, G.SEM_YR, G.SEM_SEQ,\n  SUM(C.CRDT_CNT) AS TOT_CREDIT,\n  ROUND(SUM(G.GRD_SCORE * C.CRDT_CNT) / NULLIF(SUM(C.CRDT_CNT), 0), 2) AS GPA\nFROM UNI_TBD_GRADE G\n  JOIN UNI_TBM_STD S ON G.STD_NO = S.STD_NO\n  JOIN UNI_TBM_CRS C ON G.CRS_CD = C.CRS_CD\nWHERE G.GRD_SCORE IS NOT NULL\nGROUP BY S.STD_NO, S.STD_NM, G.SEM_YR, G.SEM_SEQ\nORDER BY G.SEM_YR DESC, G.SEM_SEQ DESC, GPA DESC"
+          },
+          {
+            "id": "v_crs_open",
+            "name": "V_CRS_OPEN",
+            "position": {
+              "x": 2084,
+              "y": 220
+            },
+            "sql": "SELECT SC.SEM_YR, SC.SEM_SEQ, C.CRS_NM, P.PROF_NM, CL.CLSS_NM, SC.CRS_LIMIT,\n  (SELECT COUNT(*) FROM UNI_TBT_REG R\n   WHERE R.CRS_CD = SC.CRS_CD AND R.SEM_YR = SC.SEM_YR AND R.SEM_SEQ = SC.SEM_SEQ) AS REG_CNT\nFROM UNI_TBD_SEM_CRS SC\n  JOIN UNI_TBM_CRS C ON SC.CRS_CD = C.CRS_CD\n  JOIN UNI_TBM_PROF P ON SC.PROF_NO = P.PROF_NO\n  JOIN UNI_TBM_CLSS CL ON SC.CLSS_CD = CL.CLSS_CD\nWHERE SC.USE_YN = 'Y'\nORDER BY SC.SEM_YR DESC, SC.SEM_SEQ DESC, C.CRS_NM"
+          },
+          {
+            "id": "v_prereq_tree",
+            "name": "V_PREREQ_TREE",
+            "position": {
+              "x": 2084,
+              "y": 330
+            },
+            "sql": "SELECT C1.CRS_NM AS COURSE, C2.CRS_NM AS REQUIRES\nFROM UNI_TBD_PREREQ P\n  JOIN UNI_TBM_CRS C1 ON P.CRS_CD = C1.CRS_CD\n  JOIN UNI_TBM_CRS C2 ON P.PREREQ_CRS_CD = C2.CRS_CD\nORDER BY C1.CRS_NM"
+          }
+        ],
+        "words": [
+          {
+            "abbr": "STD",
+            "en": "Student",
+            "forbidden": false,
+            "id": "w_std",
+            "isFormat": false,
+            "ko": "학생",
+            "synonyms": []
+          },
+          {
+            "abbr": "PROF",
+            "en": "Professor",
+            "forbidden": false,
+            "id": "w_prof",
+            "isFormat": false,
+            "ko": "교수",
+            "synonyms": [
+              "강사"
+            ]
+          },
+          {
+            "abbr": "CRS",
+            "en": "Course",
+            "forbidden": false,
+            "id": "w_crs",
+            "isFormat": false,
+            "ko": "강좌",
+            "synonyms": [
+              "과목"
+            ]
+          },
+          {
+            "abbr": "REG",
+            "en": "Registration",
+            "forbidden": false,
+            "id": "w_reg",
+            "isFormat": false,
+            "ko": "수강",
+            "synonyms": [
+              "신청"
+            ]
+          },
+          {
+            "abbr": "GRD",
+            "en": "Grade",
+            "forbidden": false,
+            "id": "w_grade",
+            "isFormat": false,
+            "ko": "성적",
+            "synonyms": [
+              "평점"
+            ]
+          },
+          {
+            "abbr": "DEPT",
+            "en": "Department",
+            "forbidden": false,
+            "id": "w_dept",
+            "isFormat": false,
+            "ko": "학과",
+            "synonyms": [
+              "전공"
+            ]
+          },
+          {
+            "abbr": "SEM",
+            "en": "Semester",
+            "forbidden": false,
+            "id": "w_sem",
+            "isFormat": false,
+            "ko": "학기",
+            "synonyms": []
+          },
+          {
+            "abbr": "CLSS",
+            "en": "Classroom",
+            "forbidden": false,
+            "id": "w_clss",
+            "isFormat": false,
+            "ko": "강의실",
+            "synonyms": [
+              "교실"
+            ]
+          },
+          {
+            "abbr": "PREREQ",
+            "en": "Prerequisite",
+            "forbidden": false,
+            "id": "w_prereq",
+            "isFormat": false,
+            "ko": "선수",
+            "synonyms": []
+          },
+          {
+            "abbr": "USE",
+            "en": "Use",
+            "forbidden": false,
+            "id": "w_use",
+            "isFormat": false,
+            "ko": "사용",
+            "synonyms": []
+          },
+          {
+            "abbr": "CRDT",
+            "en": "Credit",
+            "forbidden": false,
+            "id": "w_credit",
+            "isFormat": false,
+            "ko": "학점",
+            "synonyms": []
+          },
+          {
+            "abbr": "ATTND",
+            "en": "Attendance",
+            "forbidden": false,
+            "id": "w_attnd",
+            "isFormat": false,
+            "ko": "출석",
+            "synonyms": []
+          },
+          {
+            "abbr": "ASGN",
+            "en": "Assignment",
+            "forbidden": false,
+            "id": "w_assign",
+            "isFormat": false,
+            "ko": "과제",
+            "synonyms": []
+          },
+          {
+            "abbr": "EXAM",
+            "en": "Exam",
+            "forbidden": false,
+            "id": "w_exam",
+            "isFormat": false,
+            "ko": "시험",
+            "synonyms": [
+              "고사"
+            ]
+          },
+          {
+            "abbr": "LIMIT",
+            "en": "Limit",
+            "forbidden": false,
+            "id": "w_limit",
+            "isFormat": true,
+            "ko": "정원",
+            "synonyms": []
+          },
+          {
+            "abbr": "NO",
+            "en": "Number",
+            "forbidden": false,
+            "id": "w_no",
+            "isFormat": true,
+            "ko": "번호",
+            "synonyms": []
+          },
+          {
+            "abbr": "NM",
+            "en": "Name",
+            "forbidden": false,
+            "id": "w_nm",
+            "isFormat": true,
+            "ko": "명",
+            "synonyms": []
+          },
+          {
+            "abbr": "CD",
+            "en": "Code",
+            "forbidden": false,
+            "id": "w_cd",
+            "isFormat": true,
+            "ko": "코드",
+            "synonyms": []
+          },
+          {
+            "abbr": "DT",
+            "en": "Date",
+            "forbidden": false,
+            "id": "w_dt",
+            "isFormat": true,
+            "ko": "일자",
+            "synonyms": []
+          },
+          {
+            "abbr": "YN",
+            "en": "YesNo",
+            "forbidden": false,
+            "id": "w_yn",
+            "isFormat": true,
+            "ko": "여부",
+            "synonyms": []
+          },
+          {
+            "abbr": "SEQ",
+            "en": "Sequence",
+            "forbidden": false,
+            "id": "w_seq",
+            "isFormat": true,
+            "ko": "순번",
+            "synonyms": []
+          },
+          {
+            "abbr": "CNT",
+            "en": "Count",
+            "forbidden": false,
+            "id": "w_cnt",
+            "isFormat": true,
+            "ko": "개수",
+            "synonyms": []
+          },
+          {
+            "abbr": "SCORE",
+            "en": "Score",
+            "forbidden": false,
+            "id": "w_score",
+            "isFormat": true,
+            "ko": "점수",
+            "synonyms": []
+          },
+          {
+            "abbr": "YR",
+            "en": "Year",
+            "forbidden": false,
+            "id": "w_yr",
+            "isFormat": true,
+            "ko": "년도",
+            "synonyms": []
+          },
+          {
+            "abbr": "DOW",
+            "en": "DayOfWeek",
+            "forbidden": false,
+            "id": "w_dow",
+            "isFormat": false,
+            "ko": "요일",
+            "synonyms": []
+          },
+          {
+            "abbr": "STS",
+            "en": "Status",
+            "forbidden": false,
+            "id": "w_sts",
+            "isFormat": true,
+            "ko": "상태",
+            "synonyms": []
+          }
+        ]
+      },
+      "savedAt": "2026-06-29T14:19:01.265Z",
+      "title": "엔터티제거",
+      "type": "snapshot"
+    }
+  ],
+  "domains": [
+    {
+      "dataType": "VARCHAR",
+      "default": null,
+      "group": "문자",
+      "id": "d_idno",
+      "length": 20,
+      "name": "식별번호",
+      "scale": null,
+      "unit": null
+    },
+    {
+      "dataType": "VARCHAR",
+      "default": null,
+      "group": "문자",
+      "id": "d_name",
+      "length": 100,
+      "name": "명칭",
+      "scale": null,
+      "unit": null
+    },
+    {
+      "dataType": "VARCHAR",
+      "default": null,
+      "group": "문자",
+      "id": "d_code_s",
+      "length": 10,
+      "name": "짧은코드",
+      "scale": null,
+      "unit": null
+    },
+    {
+      "dataType": "VARCHAR",
+      "default": null,
+      "group": "문자",
+      "id": "d_yr",
+      "length": 4,
+      "name": "년도",
+      "scale": null,
+      "unit": null
+    },
+    {
+      "dataType": "VARCHAR",
+      "default": null,
+      "group": "문자",
+      "id": "d_dow",
+      "length": 3,
+      "name": "요일",
+      "scale": null,
+      "unit": null
+    },
+    {
+      "dataType": "DATE",
+      "default": null,
+      "group": "일시",
+      "id": "d_date",
+      "length": null,
+      "name": "일자",
+      "scale": null,
+      "unit": null
+    },
+    {
+      "dataType": "INTEGER",
+      "default": null,
+      "group": "숫자",
+      "id": "d_cnt",
+      "length": null,
+      "name": "개수",
+      "scale": null,
+      "unit": null
+    },
+    {
+      "dataType": "NUMERIC",
+      "default": null,
+      "group": "숫자",
+      "id": "d_score",
+      "length": 5,
+      "name": "점수",
+      "scale": 2,
+      "unit": "점"
+    },
+    {
+      "dataType": "INTEGER",
+      "default": null,
+      "group": "숫자",
+      "id": "d_credit",
+      "length": null,
+      "name": "학점",
+      "scale": null,
+      "unit": "학점"
+    },
+    {
+      "dataType": "CHAR",
+      "default": null,
+      "group": "문자",
+      "id": "d_yn",
+      "length": 1,
+      "name": "여부",
+      "scale": null,
+      "unit": null
+    },
+    {
+      "dataType": "INTEGER",
+      "default": null,
+      "group": "숫자",
+      "id": "d_seq",
+      "length": null,
+      "name": "순번",
+      "scale": null,
+      "unit": null
+    }
+  ],
+  "entities": [
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_std_pk",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_stdno"
+        },
+        {
+          "default": null,
+          "id": "a_std_nm",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_stdnm"
+        },
+        {
+          "default": null,
+          "id": "a_std_dept",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_deptcd"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_std",
+      "indexes": [
+        {
+          "columns": [
+            "STD_NM",
+            "DEPT_CD"
+          ],
+          "id": "ix_std_nm",
+          "name": "IX_STD_NM",
+          "unique": false
+        }
+      ],
+      "ko": "학생",
+      "position": {
+        "x": 688.4167896318031,
+        "y": 664.9688883357785
+      },
+      "tableName": "UNI_TBM_STD",
+      "tableType": "M"
+    },
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_dept_pk",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_deptcd"
+        },
+        {
+          "default": null,
+          "id": "a_dept_nm",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_deptnm"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_dept",
+      "ko": "학과",
+      "position": {
+        "x": 1683.416789631803,
+        "y": 293.9688883357785
+      },
+      "tableName": "UNI_TBM_DEPT",
+      "tableType": "M"
+    },
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_prof_pk",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_profno"
+        },
+        {
+          "default": null,
+          "id": "a_prof_nm",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_profnm"
+        },
+        {
+          "default": null,
+          "id": "a_prof_dept",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_deptcd"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_prof",
+      "indexes": [
+        {
+          "columns": [
+            "DEPT_CD",
+            "PROF_NM"
+          ],
+          "id": "ix_prof_dept",
+          "name": "IX_PROF_DEPT",
+          "unique": false
+        }
+      ],
+      "ko": "교수",
+      "position": {
+        "x": 1360.416789631803,
+        "y": 301.9688883357785
+      },
+      "tableName": "UNI_TBM_PROF",
+      "tableType": "M"
+    },
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_crs_pk",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_crscd"
+        },
+        {
+          "default": null,
+          "id": "a_crs_nm",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_crsnm"
+        },
+        {
+          "default": "3",
+          "id": "a_crs_credit",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_credit"
+        },
+        {
+          "default": null,
+          "id": "a_crs_dept",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_deptcd"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_crs",
+      "indexes": [
+        {
+          "columns": [
+            "CRS_NM"
+          ],
+          "id": "ix_crs_nm",
+          "name": "IX_CRS_NM",
+          "unique": false
+        }
+      ],
+      "ko": "강좌",
+      "position": {
+        "x": 1362.916789631803,
+        "y": 61.96888833577851
+      },
+      "tableName": "UNI_TBM_CRS",
+      "tableType": "M"
+    },
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_prereq_crs",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_crscd"
+        },
+        {
+          "default": null,
+          "id": "a_prereq_req",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_prereqcd"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_prereq",
+      "ko": "선수강좌",
+      "position": {
+        "x": 1006.4167896318032,
+        "y": 73.96888833577852
+      },
+      "tableName": "UNI_TBD_PREREQ",
+      "tableType": "D"
+    },
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_semcrs_crs",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_crscd"
+        },
+        {
+          "default": null,
+          "id": "a_semcrs_yr",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_semyr"
+        },
+        {
+          "default": null,
+          "id": "a_semcrs_seq",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_semseq"
+        },
+        {
+          "default": null,
+          "id": "a_semcrs_prof",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_profno"
+        },
+        {
+          "default": null,
+          "id": "a_semcrs_clss",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_clsscd"
+        },
+        {
+          "default": null,
+          "id": "a_semcrs_dow",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_dowcd"
+        },
+        {
+          "default": "30",
+          "id": "a_semcrs_limit",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_crslimit"
+        },
+        {
+          "default": "'Y'",
+          "id": "a_semcrs_use",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_useyn"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_semcrs",
+      "indexes": [
+        {
+          "columns": [
+            "SEM_YR",
+            "SEM_SEQ",
+            "CLSS_CD",
+            "DOW_CD"
+          ],
+          "id": "ix_semcrs_clss",
+          "name": "IX_SEMCRS_CLSS",
+          "unique": false
+        },
+        {
+          "columns": [
+            "PROF_NO",
+            "SEM_YR",
+            "SEM_SEQ"
+          ],
+          "id": "ix_semcrs_prof",
+          "name": "IX_SEMCRS_PROF",
+          "unique": false
+        }
+      ],
+      "ko": "개설강좌",
+      "position": {
+        "x": 1024.416789631803,
+        "y": 246.9688883357785
+      },
+      "tableName": "UNI_TBD_SEM_CRS",
+      "tableType": "D"
+    },
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_reg_std",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_stdno"
+        },
+        {
+          "default": null,
+          "id": "a_reg_crs",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_crscd"
+        },
+        {
+          "default": null,
+          "id": "a_reg_yr",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_semyr"
+        },
+        {
+          "default": null,
+          "id": "a_reg_seq",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_semseq"
+        },
+        {
+          "default": null,
+          "id": "a_reg_dt",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_regdt"
+        },
+        {
+          "default": "'ENRL'",
+          "id": "a_reg_sts",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_regsts"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_reg",
+      "indexes": [
+        {
+          "columns": [
+            "STD_NO",
+            "SEM_YR",
+            "SEM_SEQ"
+          ],
+          "id": "ix_reg_std_sem",
+          "name": "IX_REG_STD_SEM",
+          "unique": false
+        }
+      ],
+      "ko": "수강신청",
+      "position": {
+        "x": 367.9167896318031,
+        "y": 149.4688883357785
+      },
+      "tableName": "UNI_TBT_REG",
+      "tableType": "T"
+    },
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_grade_std",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_stdno"
+        },
+        {
+          "default": null,
+          "id": "a_grade_crs",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_crscd"
+        },
+        {
+          "default": null,
+          "id": "a_grade_yr",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_semyr"
+        },
+        {
+          "default": null,
+          "id": "a_grade_seq",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_semseq"
+        },
+        {
+          "default": null,
+          "id": "a_grade_attnd",
+          "isNotNull": false,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_attndcnt"
+        },
+        {
+          "default": null,
+          "id": "a_grade_assign",
+          "isNotNull": false,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_assignscore"
+        },
+        {
+          "default": null,
+          "id": "a_grade_exam",
+          "isNotNull": false,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_examscore"
+        },
+        {
+          "default": null,
+          "id": "a_grade_total",
+          "isNotNull": false,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_gradescore"
+        },
+        {
+          "default": null,
+          "id": "a_grade_cd",
+          "isNotNull": false,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_gradecd"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_grade",
+      "ko": "성적",
+      "position": {
+        "x": 28.416789631803113,
+        "y": 317.2188883357785
+      },
+      "tableName": "UNI_TBD_GRADE",
+      "tableType": "D"
+    },
+    {
+      "attributes": [
+        {
+          "default": null,
+          "id": "a_clss_pk",
+          "isNotNull": true,
+          "isPk": true,
+          "isUnique": false,
+          "termId": "t_clsscd"
+        },
+        {
+          "default": null,
+          "id": "a_clss_nm",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_clssnm"
+        },
+        {
+          "default": "50",
+          "id": "a_clss_limit",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_crslimit"
+        },
+        {
+          "default": "'Y'",
+          "id": "a_clss_use",
+          "isNotNull": true,
+          "isPk": false,
+          "isUnique": false,
+          "termId": "t_useyn"
+        }
+      ],
+      "groupId": "g_uni",
+      "id": "e_clss",
+      "ko": "강의실",
+      "position": {
+        "x": 1360.416789631803,
+        "y": 496.9688883357785
+      },
+      "tableName": "UNI_TBM_CLSS",
+      "tableType": "M"
+    },
+    {
+      "attributes": [],
+      "groupId": null,
+      "id": "e_1",
+      "ko": "새 엔티티 2",
+      "position": {
+        "x": 137.7287780417904,
+        "y": -254.53124635181712
+      },
+      "tableName": "TB_NEW",
+      "tableType": "M"
+    }
+  ],
+  "meta": {
+    "createdAt": "2026-06-25T00:00:00.000Z",
+    "name": "수강신청관리",
+    "updatedAt": "2026-06-29T14:19:01.265Z"
+  },
+  "relationships": [
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_std_dept",
+          "toAttrId": "a_dept_pk"
+        }
+      ],
+      "fromEntityId": "e_std",
+      "id": "r_std_dept",
+      "toEntityId": "e_dept",
+      "type": "many-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_prof_dept",
+          "toAttrId": "a_dept_pk"
+        }
+      ],
+      "fromEntityId": "e_prof",
+      "id": "r_prof_dept",
+      "toEntityId": "e_dept",
+      "type": "many-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_crs_dept",
+          "toAttrId": "a_dept_pk"
+        }
+      ],
+      "fromEntityId": "e_crs",
+      "id": "r_crs_dept",
+      "toEntityId": "e_dept",
+      "type": "many-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_prereq_crs",
+          "toAttrId": "a_crs_pk"
+        },
+        {
+          "fromAttrId": "a_prereq_req",
+          "toAttrId": "a_crs_pk"
+        }
+      ],
+      "fromEntityId": "e_prereq",
+      "id": "r_prereq_crs",
+      "toEntityId": "e_crs",
+      "type": "one-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_semcrs_crs",
+          "toAttrId": "a_crs_pk"
+        }
+      ],
+      "fromEntityId": "e_semcrs",
+      "id": "r_semcrs_crs",
+      "toEntityId": "e_crs",
+      "type": "many-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_semcrs_prof",
+          "toAttrId": "a_prof_pk"
+        }
+      ],
+      "fromEntityId": "e_semcrs",
+      "id": "r_semcrs_prof",
+      "toEntityId": "e_prof",
+      "type": "many-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_semcrs_clss",
+          "toAttrId": "a_clss_pk"
+        }
+      ],
+      "fromEntityId": "e_semcrs",
+      "id": "r_semcrs_clss",
+      "toEntityId": "e_clss",
+      "type": "many-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_reg_std",
+          "toAttrId": "a_std_pk"
+        }
+      ],
+      "fromEntityId": "e_reg",
+      "id": "r_reg_std",
+      "toEntityId": "e_std",
+      "type": "many-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_reg_crs",
+          "toAttrId": "a_semcrs_crs"
+        },
+        {
+          "fromAttrId": "a_reg_yr",
+          "toAttrId": "a_semcrs_yr"
+        },
+        {
+          "fromAttrId": "a_reg_seq",
+          "toAttrId": "a_semcrs_seq"
+        }
+      ],
+      "fromEntityId": "e_reg",
+      "id": "r_reg_semcrs",
+      "toEntityId": "e_semcrs",
+      "type": "many-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_grade_std",
+          "toAttrId": "a_reg_std"
+        },
+        {
+          "fromAttrId": "a_grade_crs",
+          "toAttrId": "a_reg_crs"
+        },
+        {
+          "fromAttrId": "a_grade_yr",
+          "toAttrId": "a_reg_yr"
+        },
+        {
+          "fromAttrId": "a_grade_seq",
+          "toAttrId": "a_reg_seq"
+        }
+      ],
+      "fromEntityId": "e_grade",
+      "id": "r_grade_reg",
+      "toEntityId": "e_reg",
+      "type": "one-to-one"
+    },
+    {
+      "columnPairs": [
+        {
+          "fromAttrId": "a_grade_std",
+          "toAttrId": "a_std_pk"
+        }
+      ],
+      "fromEntityId": "e_grade",
+      "id": "r_1",
+      "toEntityId": "e_std",
+      "type": "many-to-one"
+    }
+  ],
+  "settings": {
+    "defaultPrefix": "TB",
+    "namingPattern": "B"
+  },
+  "tableGroups": [
+    {
+      "color": "#8b5cf6",
+      "id": "g_uni",
+      "name": "대학관리",
+      "namingEnabled": true,
+      "position": {
+        "x": -19.583210368196887,
+        "y": -22.031111664221488
+      },
+      "prefix": "UNI",
+      "size": {
+        "height": 890,
+        "width": 2004
+      }
+    }
+  ],
+  "terms": [
+    {
+      "columnName": "STD_NO",
+      "domainId": "d_idno",
+      "id": "t_stdno",
+      "ko": "학생번호",
+      "wordIds": [
+        "w_std",
+        "w_no"
+      ]
+    },
+    {
+      "columnName": "STD_NM",
+      "domainId": "d_name",
+      "id": "t_stdnm",
+      "ko": "학생명",
+      "wordIds": [
+        "w_std",
+        "w_nm"
+      ]
+    },
+    {
+      "columnName": "DEPT_CD",
+      "domainId": "d_code_s",
+      "id": "t_deptcd",
+      "ko": "학과코드",
+      "wordIds": [
+        "w_dept",
+        "w_cd"
+      ]
+    },
+    {
+      "columnName": "DEPT_NM",
+      "domainId": "d_name",
+      "id": "t_deptnm",
+      "ko": "학과명",
+      "wordIds": [
+        "w_dept",
+        "w_nm"
+      ]
+    },
+    {
+      "columnName": "PROF_NO",
+      "domainId": "d_idno",
+      "id": "t_profno",
+      "ko": "교수번호",
+      "wordIds": [
+        "w_prof",
+        "w_no"
+      ]
+    },
+    {
+      "columnName": "PROF_NM",
+      "domainId": "d_name",
+      "id": "t_profnm",
+      "ko": "교수명",
+      "wordIds": [
+        "w_prof",
+        "w_nm"
+      ]
+    },
+    {
+      "columnName": "CRS_CD",
+      "domainId": "d_code_s",
+      "id": "t_crscd",
+      "ko": "강좌코드",
+      "wordIds": [
+        "w_crs",
+        "w_cd"
+      ]
+    },
+    {
+      "columnName": "CRS_NM",
+      "domainId": "d_name",
+      "id": "t_crsnm",
+      "ko": "강좌명",
+      "wordIds": [
+        "w_crs",
+        "w_nm"
+      ]
+    },
+    {
+      "columnName": "SEM_YR",
+      "domainId": "d_yr",
+      "id": "t_semyr",
+      "ko": "학기년도",
+      "wordIds": [
+        "w_sem",
+        "w_yr"
+      ]
+    },
+    {
+      "columnName": "SEM_SEQ",
+      "domainId": "d_seq",
+      "id": "t_semseq",
+      "ko": "학기순번",
+      "wordIds": [
+        "w_sem",
+        "w_seq"
+      ]
+    },
+    {
+      "columnName": "CRS_LIMIT",
+      "domainId": "d_cnt",
+      "id": "t_crslimit",
+      "ko": "강좌정원",
+      "wordIds": [
+        "w_crs",
+        "w_limit"
+      ]
+    },
+    {
+      "columnName": "CRDT_CNT",
+      "domainId": "d_credit",
+      "id": "t_credit",
+      "ko": "학점개수",
+      "wordIds": [
+        "w_credit",
+        "w_cnt"
+      ]
+    },
+    {
+      "columnName": "REG_DT",
+      "domainId": "d_date",
+      "id": "t_regdt",
+      "ko": "수강일자",
+      "wordIds": [
+        "w_reg",
+        "w_dt"
+      ]
+    },
+    {
+      "columnName": "REG_STS",
+      "domainId": "d_code_s",
+      "id": "t_regsts",
+      "ko": "수강상태",
+      "wordIds": [
+        "w_reg",
+        "w_sts"
+      ]
+    },
+    {
+      "columnName": "GRD_SCORE",
+      "domainId": "d_score",
+      "id": "t_gradescore",
+      "ko": "성적점수",
+      "wordIds": [
+        "w_grade",
+        "w_score"
+      ]
+    },
+    {
+      "columnName": "GRD_CD",
+      "domainId": "d_code_s",
+      "id": "t_gradecd",
+      "ko": "성적코드",
+      "wordIds": [
+        "w_grade",
+        "w_cd"
+      ]
+    },
+    {
+      "columnName": "CLSS_CD",
+      "domainId": "d_code_s",
+      "id": "t_clsscd",
+      "ko": "강의실코드",
+      "wordIds": [
+        "w_clss",
+        "w_cd"
+      ]
+    },
+    {
+      "columnName": "CLSS_NM",
+      "domainId": "d_name",
+      "id": "t_clssnm",
+      "ko": "강의실명",
+      "wordIds": [
+        "w_clss",
+        "w_nm"
+      ]
+    },
+    {
+      "columnName": "DOW_CD",
+      "domainId": "d_dow",
+      "id": "t_dowcd",
+      "ko": "요일코드",
+      "wordIds": [
+        "w_dow",
+        "w_cd"
+      ]
+    },
+    {
+      "columnName": "USE_YN",
+      "domainId": "d_yn",
+      "id": "t_useyn",
+      "ko": "사용여부",
+      "wordIds": [
+        "w_use",
+        "w_yn"
+      ]
+    },
+    {
+      "columnName": "ATTND_CNT",
+      "domainId": "d_cnt",
+      "id": "t_attndcnt",
+      "ko": "출석개수",
+      "wordIds": [
+        "w_attnd",
+        "w_cnt"
+      ]
+    },
+    {
+      "columnName": "EXAM_SCORE",
+      "domainId": "d_score",
+      "id": "t_examscore",
+      "ko": "시험점수",
+      "wordIds": [
+        "w_exam",
+        "w_score"
+      ]
+    },
+    {
+      "columnName": "ASGN_SCORE",
+      "domainId": "d_score",
+      "id": "t_assignscore",
+      "ko": "과제점수",
+      "wordIds": [
+        "w_assign",
+        "w_score"
+      ]
+    },
+    {
+      "columnName": "PREREQ_CRS_CD",
+      "domainId": "d_code_s",
+      "id": "t_prereqcd",
+      "ko": "선수강좌코드",
+      "wordIds": [
+        "w_prereq",
+        "w_crs",
+        "w_cd"
+      ]
+    }
+  ],
+  "version": 1,
+  "views": [
+    {
+      "id": "v_reg_list",
+      "name": "V_REG_LIST",
+      "position": {
+        "x": 2084,
+        "y": 0
+      },
+      "sql": "SELECT R.SEM_YR, R.SEM_SEQ, S.STD_NO, S.STD_NM, C.CRS_NM, P.PROF_NM, R.REG_STS\nFROM UNI_TBT_REG R\n  JOIN UNI_TBM_STD S ON R.STD_NO = S.STD_NO\n  JOIN UNI_TBM_CRS C ON R.CRS_CD = C.CRS_CD\n  JOIN UNI_TBD_SEM_CRS SC ON R.CRS_CD = SC.CRS_CD AND R.SEM_YR = SC.SEM_YR AND R.SEM_SEQ = SC.SEM_SEQ\n  JOIN UNI_TBM_PROF P ON SC.PROF_NO = P.PROF_NO\nORDER BY R.SEM_YR DESC, R.SEM_SEQ DESC, S.STD_NO"
+    },
+    {
+      "id": "v_grade_summary",
+      "name": "V_GRADE_SUMMARY",
+      "position": {
+        "x": 2084,
+        "y": 110
+      },
+      "sql": "SELECT S.STD_NO, S.STD_NM, G.SEM_YR, G.SEM_SEQ,\n  SUM(C.CRDT_CNT) AS TOT_CREDIT,\n  ROUND(SUM(G.GRD_SCORE * C.CRDT_CNT) / NULLIF(SUM(C.CRDT_CNT), 0), 2) AS GPA\nFROM UNI_TBD_GRADE G\n  JOIN UNI_TBM_STD S ON G.STD_NO = S.STD_NO\n  JOIN UNI_TBM_CRS C ON G.CRS_CD = C.CRS_CD\nWHERE G.GRD_SCORE IS NOT NULL\nGROUP BY S.STD_NO, S.STD_NM, G.SEM_YR, G.SEM_SEQ\nORDER BY G.SEM_YR DESC, G.SEM_SEQ DESC, GPA DESC"
+    },
+    {
+      "id": "v_crs_open",
+      "name": "V_CRS_OPEN",
+      "position": {
+        "x": 2084,
+        "y": 220
+      },
+      "sql": "SELECT SC.SEM_YR, SC.SEM_SEQ, C.CRS_NM, P.PROF_NM, CL.CLSS_NM, SC.CRS_LIMIT,\n  (SELECT COUNT(*) FROM UNI_TBT_REG R\n   WHERE R.CRS_CD = SC.CRS_CD AND R.SEM_YR = SC.SEM_YR AND R.SEM_SEQ = SC.SEM_SEQ) AS REG_CNT\nFROM UNI_TBD_SEM_CRS SC\n  JOIN UNI_TBM_CRS C ON SC.CRS_CD = C.CRS_CD\n  JOIN UNI_TBM_PROF P ON SC.PROF_NO = P.PROF_NO\n  JOIN UNI_TBM_CLSS CL ON SC.CLSS_CD = CL.CLSS_CD\nWHERE SC.USE_YN = 'Y'\nORDER BY SC.SEM_YR DESC, SC.SEM_SEQ DESC, C.CRS_NM"
+    },
+    {
+      "id": "v_prereq_tree",
+      "name": "V_PREREQ_TREE",
+      "position": {
+        "x": 2084,
+        "y": 330
+      },
+      "sql": "SELECT C1.CRS_NM AS COURSE, C2.CRS_NM AS REQUIRES\nFROM UNI_TBD_PREREQ P\n  JOIN UNI_TBM_CRS C1 ON P.CRS_CD = C1.CRS_CD\n  JOIN UNI_TBM_CRS C2 ON P.PREREQ_CRS_CD = C2.CRS_CD\nORDER BY C1.CRS_NM"
+    }
+  ],
+  "words": [
+    {
+      "abbr": "STD",
+      "en": "Student",
+      "forbidden": false,
+      "id": "w_std",
+      "isFormat": false,
+      "ko": "학생",
+      "synonyms": []
+    },
+    {
+      "abbr": "PROF",
+      "en": "Professor",
+      "forbidden": false,
+      "id": "w_prof",
+      "isFormat": false,
+      "ko": "교수",
+      "synonyms": [
+        "강사"
+      ]
+    },
+    {
+      "abbr": "CRS",
+      "en": "Course",
+      "forbidden": false,
+      "id": "w_crs",
+      "isFormat": false,
+      "ko": "강좌",
+      "synonyms": [
+        "과목"
+      ]
+    },
+    {
+      "abbr": "REG",
+      "en": "Registration",
+      "forbidden": false,
+      "id": "w_reg",
+      "isFormat": false,
+      "ko": "수강",
+      "synonyms": [
+        "신청"
+      ]
+    },
+    {
+      "abbr": "GRD",
+      "en": "Grade",
+      "forbidden": false,
+      "id": "w_grade",
+      "isFormat": false,
+      "ko": "성적",
+      "synonyms": [
+        "평점"
+      ]
+    },
+    {
+      "abbr": "DEPT",
+      "en": "Department",
+      "forbidden": false,
+      "id": "w_dept",
+      "isFormat": false,
+      "ko": "학과",
+      "synonyms": [
+        "전공"
+      ]
+    },
+    {
+      "abbr": "SEM",
+      "en": "Semester",
+      "forbidden": false,
+      "id": "w_sem",
+      "isFormat": false,
+      "ko": "학기",
+      "synonyms": []
+    },
+    {
+      "abbr": "CLSS",
+      "en": "Classroom",
+      "forbidden": false,
+      "id": "w_clss",
+      "isFormat": false,
+      "ko": "강의실",
+      "synonyms": [
+        "교실"
+      ]
+    },
+    {
+      "abbr": "PREREQ",
+      "en": "Prerequisite",
+      "forbidden": false,
+      "id": "w_prereq",
+      "isFormat": false,
+      "ko": "선수",
+      "synonyms": []
+    },
+    {
+      "abbr": "USE",
+      "en": "Use",
+      "forbidden": false,
+      "id": "w_use",
+      "isFormat": false,
+      "ko": "사용",
+      "synonyms": []
+    },
+    {
+      "abbr": "CRDT",
+      "en": "Credit",
+      "forbidden": false,
+      "id": "w_credit",
+      "isFormat": false,
+      "ko": "학점",
+      "synonyms": []
+    },
+    {
+      "abbr": "ATTND",
+      "en": "Attendance",
+      "forbidden": false,
+      "id": "w_attnd",
+      "isFormat": false,
+      "ko": "출석",
+      "synonyms": []
+    },
+    {
+      "abbr": "ASGN",
+      "en": "Assignment",
+      "forbidden": false,
+      "id": "w_assign",
+      "isFormat": false,
+      "ko": "과제",
+      "synonyms": []
+    },
+    {
+      "abbr": "EXAM",
+      "en": "Exam",
+      "forbidden": false,
+      "id": "w_exam",
+      "isFormat": false,
+      "ko": "시험",
+      "synonyms": [
+        "고사"
+      ]
+    },
+    {
+      "abbr": "LIMIT",
+      "en": "Limit",
+      "forbidden": false,
+      "id": "w_limit",
+      "isFormat": true,
+      "ko": "정원",
+      "synonyms": []
+    },
+    {
+      "abbr": "NO",
+      "en": "Number",
+      "forbidden": false,
+      "id": "w_no",
+      "isFormat": true,
+      "ko": "번호",
+      "synonyms": []
+    },
+    {
+      "abbr": "NM",
+      "en": "Name",
+      "forbidden": false,
+      "id": "w_nm",
+      "isFormat": true,
+      "ko": "명",
+      "synonyms": []
+    },
+    {
+      "abbr": "CD",
+      "en": "Code",
+      "forbidden": false,
+      "id": "w_cd",
+      "isFormat": true,
+      "ko": "코드",
+      "synonyms": []
+    },
+    {
+      "abbr": "DT",
+      "en": "Date",
+      "forbidden": false,
+      "id": "w_dt",
+      "isFormat": true,
+      "ko": "일자",
+      "synonyms": []
+    },
+    {
+      "abbr": "YN",
+      "en": "YesNo",
+      "forbidden": false,
+      "id": "w_yn",
+      "isFormat": true,
+      "ko": "여부",
+      "synonyms": []
+    },
+    {
+      "abbr": "SEQ",
+      "en": "Sequence",
+      "forbidden": false,
+      "id": "w_seq",
+      "isFormat": true,
+      "ko": "순번",
+      "synonyms": []
+    },
+    {
+      "abbr": "CNT",
+      "en": "Count",
+      "forbidden": false,
+      "id": "w_cnt",
+      "isFormat": true,
+      "ko": "개수",
+      "synonyms": []
+    },
+    {
+      "abbr": "SCORE",
+      "en": "Score",
+      "forbidden": false,
+      "id": "w_score",
+      "isFormat": true,
+      "ko": "점수",
+      "synonyms": []
+    },
+    {
+      "abbr": "YR",
+      "en": "Year",
+      "forbidden": false,
+      "id": "w_yr",
+      "isFormat": true,
+      "ko": "년도",
+      "synonyms": []
+    },
+    {
+      "abbr": "DOW",
+      "en": "DayOfWeek",
+      "forbidden": false,
+      "id": "w_dow",
+      "isFormat": false,
+      "ko": "요일",
+      "synonyms": []
+    },
+    {
+      "abbr": "STS",
+      "en": "Status",
+      "forbidden": false,
+      "id": "w_sts",
+      "isFormat": true,
+      "ko": "상태",
+      "synonyms": []
+    }
+  ]
+}

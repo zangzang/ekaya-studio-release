@@ -1,0 +1,752 @@
+{
+  "version": 1,
+  "meta": {
+    "name": "기업정보시스템",
+    "createdAt": "2026-06-25T00:00:00.000Z",
+    "updatedAt": "2026-06-25T12:00:00.000Z"
+  },
+  "settings": {
+    "defaultPrefix": "TB",
+    "namingPattern": "B"
+  },
+  "words": [
+    {
+      "id": "w_emp",
+      "ko": "사원",
+      "abbr": "EMP",
+      "en": "Employee",
+      "isFormat": false,
+      "synonyms": ["직원", "스태프"],
+      "forbidden": false
+    },
+    {
+      "id": "w_dept",
+      "ko": "부서",
+      "abbr": "DEPT",
+      "en": "Department",
+      "isFormat": false,
+      "synonyms": ["팀", "조직"],
+      "forbidden": false
+    },
+    {
+      "id": "w_grd",
+      "ko": "직급",
+      "abbr": "GRD",
+      "en": "Grade",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_sal",
+      "ko": "급여",
+      "abbr": "SAL",
+      "en": "Salary",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_acct",
+      "ko": "계정",
+      "abbr": "ACCT",
+      "en": "Account",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_jrnl",
+      "ko": "분개",
+      "abbr": "JRNL",
+      "en": "Journal",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_item",
+      "ko": "품목",
+      "abbr": "ITEM",
+      "en": "Item",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_wh",
+      "ko": "창고",
+      "abbr": "WH",
+      "en": "Warehouse",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_cust",
+      "ko": "고객",
+      "abbr": "CUST",
+      "en": "Customer",
+      "isFormat": false,
+      "synonyms": ["거래처"],
+      "forbidden": false
+    },
+    {
+      "id": "w_supp",
+      "ko": "공급",
+      "abbr": "SUPP",
+      "en": "Supplier",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_inv",
+      "ko": "재고",
+      "abbr": "INV",
+      "en": "Inventory",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_slip",
+      "ko": "전표",
+      "abbr": "SLIP",
+      "en": "Slip",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_appr",
+      "ko": "결재",
+      "abbr": "APPR",
+      "en": "Approval",
+      "isFormat": false,
+      "synonyms": ["승인"],
+      "forbidden": false
+    },
+    {
+      "id": "w_sts",
+      "ko": "상태",
+      "abbr": "STS",
+      "en": "Status",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_hist",
+      "ko": "이력",
+      "abbr": "HIST",
+      "en": "History",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_bgn",
+      "ko": "시작",
+      "abbr": "BGN",
+      "en": "Begin",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_end",
+      "ko": "종료",
+      "abbr": "END",
+      "en": "End",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_desc",
+      "ko": "적요",
+      "abbr": "DESC",
+      "en": "Description",
+      "isFormat": false,
+      "synonyms": ["비고", "내역"],
+      "forbidden": false
+    },
+    {
+      "id": "w_upper",
+      "ko": "상위",
+      "abbr": "UPPR",
+      "en": "Upper",
+      "isFormat": false,
+      "synonyms": ["부모"],
+      "forbidden": false
+    },
+    {
+      "id": "w_tel",
+      "ko": "전화",
+      "abbr": "TEL",
+      "en": "Telephone",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_email",
+      "ko": "이메일",
+      "abbr": "EMAIL",
+      "en": "Email",
+      "isFormat": false,
+      "synonyms": ["메일"],
+      "forbidden": false
+    },
+    {
+      "id": "w_addr",
+      "ko": "주소",
+      "abbr": "ADDR",
+      "en": "Address",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_audit",
+      "ko": "감사",
+      "abbr": "AUDIT",
+      "en": "Audit",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_rev",
+      "ko": "역",
+      "abbr": "REV",
+      "en": "Reverse",
+      "isFormat": false,
+      "synonyms": ["반대"],
+      "forbidden": false
+    },
+    {
+      "id": "w_no",
+      "ko": "번호",
+      "abbr": "NO",
+      "en": "Number",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_nm",
+      "ko": "명",
+      "abbr": "NM",
+      "en": "Name",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_cd",
+      "ko": "코드",
+      "abbr": "CD",
+      "en": "Code",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_dt",
+      "ko": "일자",
+      "abbr": "DT",
+      "en": "Date",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_dtm",
+      "ko": "일시",
+      "abbr": "DTM",
+      "en": "Datetime",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_yn",
+      "ko": "여부",
+      "abbr": "YN",
+      "en": "YesNo",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_seq",
+      "ko": "순번",
+      "abbr": "SEQ",
+      "en": "Sequence",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_amt",
+      "ko": "금액",
+      "abbr": "AMT",
+      "en": "Amount",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_qty",
+      "ko": "수량",
+      "abbr": "QTY",
+      "en": "Quantity",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_rate",
+      "ko": "비율",
+      "abbr": "RATE",
+      "en": "Rate",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    }
+  ],
+  "domains": [
+    {
+      "id": "d_idno",
+      "name": "식별번호",
+      "group": "문자",
+      "dataType": "VARCHAR",
+      "length": 20,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_name",
+      "name": "명칭",
+      "group": "문자",
+      "dataType": "VARCHAR",
+      "length": 100,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_code_s",
+      "name": "짧은코드",
+      "group": "문자",
+      "dataType": "VARCHAR",
+      "length": 10,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_code_l",
+      "name": "긴코드",
+      "group": "문자",
+      "dataType": "VARCHAR",
+      "length": 50,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_amt",
+      "name": "금액",
+      "group": "숫자",
+      "dataType": "NUMERIC",
+      "length": 14,
+      "scale": 2,
+      "unit": "원",
+      "default": null
+    },
+    {
+      "id": "d_qty",
+      "name": "수량",
+      "group": "숫자",
+      "dataType": "INTEGER",
+      "length": null,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_rate",
+      "name": "비율",
+      "group": "숫자",
+      "dataType": "NUMERIC",
+      "length": 5,
+      "scale": 2,
+      "unit": "%",
+      "default": null
+    },
+    {
+      "id": "d_date",
+      "name": "일자",
+      "group": "일시",
+      "dataType": "DATE",
+      "length": null,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_dtm",
+      "name": "일시",
+      "group": "일시",
+      "dataType": "TIMESTAMP",
+      "length": null,
+      "scale": null,
+      "unit": null,
+      "default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "id": "d_yn",
+      "name": "여부",
+      "group": "문자",
+      "dataType": "CHAR",
+      "length": 1,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_desc",
+      "name": "비고",
+      "group": "문자",
+      "dataType": "VARCHAR",
+      "length": 500,
+      "scale": null,
+      "unit": null,
+      "default": null
+    }
+  ],
+  "terms": [
+    { "id": "t_empno",    "ko": "사원번호",   "wordIds": ["w_emp", "w_no"],   "columnName": "EMP_NO",    "domainId": "d_idno" },
+    { "id": "t_empnm",    "ko": "사원명",     "wordIds": ["w_emp", "w_nm"],   "columnName": "EMP_NM",    "domainId": "d_name" },
+    { "id": "t_emptel",   "ko": "사원전화",   "wordIds": ["w_emp", "w_tel"],  "columnName": "EMP_TEL",   "domainId": "d_name" },
+    { "id": "t_empemail", "ko": "사원이메일", "wordIds": ["w_emp", "w_email"],"columnName": "EMP_EMAIL", "domainId": "d_code_l" },
+    { "id": "t_deptno",   "ko": "부서번호",   "wordIds": ["w_dept", "w_no"],  "columnName": "DEPT_NO",   "domainId": "d_idno" },
+    { "id": "t_deptnm",   "ko": "부서명",     "wordIds": ["w_dept", "w_nm"],  "columnName": "DEPT_NM",   "domainId": "d_name" },
+    { "id": "t_grdcd",    "ko": "직급코드",   "wordIds": ["w_grd", "w_cd"],   "columnName": "GRD_CD",    "domainId": "d_code_s" },
+    { "id": "t_grdnm",    "ko": "직급명",     "wordIds": ["w_grd", "w_nm"],   "columnName": "GRD_NM",    "domainId": "d_name" },
+    { "id": "t_salamt",   "ko": "급여금액",   "wordIds": ["w_sal", "w_amt"],  "columnName": "SAL_AMT",   "domainId": "d_amt" },
+    { "id": "t_bgndt",    "ko": "시작일자",   "wordIds": ["w_bgn", "w_dt"],   "columnName": "BGN_DT",    "domainId": "d_date" },
+    { "id": "t_enddt",    "ko": "종료일자",   "wordIds": ["w_end", "w_dt"],   "columnName": "END_DT",    "domainId": "d_date" },
+    { "id": "t_acctcd",   "ko": "계정코드",   "wordIds": ["w_acct", "w_cd"],  "columnName": "ACCT_CD",   "domainId": "d_code_s" },
+    { "id": "t_acctnm",   "ko": "계정명",     "wordIds": ["w_acct", "w_nm"],  "columnName": "ACCT_NM",   "domainId": "d_name" },
+    { "id": "t_jrnlno",   "ko": "분개번호",   "wordIds": ["w_jrnl", "w_no"],  "columnName": "JRNL_NO",   "domainId": "d_idno" },
+    { "id": "t_jrnldesc", "ko": "분개적요",   "wordIds": ["w_jrnl", "w_desc"],"columnName": "JRNL_DESC", "domainId": "d_desc" },
+    { "id": "t_jrnldt",   "ko": "분개일자",   "wordIds": ["w_jrnl", "w_dt"],  "columnName": "JRNL_DT",   "domainId": "d_date" },
+    { "id": "t_jrnlseq",  "ko": "분개순번",   "wordIds": ["w_jrnl", "w_seq"], "columnName": "JRNL_SEQ",  "domainId": "d_qty" },
+    { "id": "t_jrnlamt",  "ko": "분개금액",   "wordIds": ["w_jrnl", "w_amt"], "columnName": "JRNL_AMT",  "domainId": "d_amt" },
+    { "id": "t_itemcd",   "ko": "품목코드",   "wordIds": ["w_item", "w_cd"],  "columnName": "ITEM_CD",   "domainId": "d_code_s" },
+    { "id": "t_itemnm",   "ko": "품목명",     "wordIds": ["w_item", "w_nm"],  "columnName": "ITEM_NM",   "domainId": "d_name" },
+    { "id": "t_whcd",     "ko": "창고코드",   "wordIds": ["w_wh", "w_cd"],    "columnName": "WH_CD",     "domainId": "d_code_s" },
+    { "id": "t_whnm",     "ko": "창고명",     "wordIds": ["w_wh", "w_nm"],    "columnName": "WH_NM",     "domainId": "d_name" },
+    { "id": "t_custno",   "ko": "고객번호",   "wordIds": ["w_cust", "w_no"],  "columnName": "CUST_NO",   "domainId": "d_idno" },
+    { "id": "t_custnm",   "ko": "고객명",     "wordIds": ["w_cust", "w_nm"],  "columnName": "CUST_NM",   "domainId": "d_name" },
+    { "id": "t_suppno",   "ko": "공급번호",   "wordIds": ["w_supp", "w_no"],  "columnName": "SUPP_NO",   "domainId": "d_idno" },
+    { "id": "t_suppnm",   "ko": "공급명",     "wordIds": ["w_supp", "w_nm"],  "columnName": "SUPP_NM",   "domainId": "d_name" },
+    { "id": "t_useyn",    "ko": "사용여부",   "wordIds": ["w_yn"],            "columnName": "USE_YN",    "domainId": "d_yn" },
+    { "id": "t_invqty",   "ko": "재고수량",   "wordIds": ["w_inv", "w_qty"],  "columnName": "INV_QTY",   "domainId": "d_qty" },
+    { "id": "t_inoutdt",  "ko": "입출고일시", "wordIds": ["w_sts", "w_dtm"],  "columnName": "INOUT_DTM", "domainId": "d_dtm" },
+    { "id": "t_inoutseq", "ko": "입출고순번", "wordIds": ["w_seq"],           "columnName": "INOUT_SEQ", "domainId": "d_qty" },
+    { "id": "t_inoutqty", "ko": "입출고수량", "wordIds": ["w_qty"],           "columnName": "INOUT_QTY", "domainId": "d_qty" },
+    { "id": "t_apprdt",   "ko": "결재일자",   "wordIds": ["w_appr", "w_dt"],  "columnName": "APPR_DT",   "domainId": "d_date" },
+    { "id": "t_stscd",    "ko": "상태코드",   "wordIds": ["w_sts", "w_cd"],   "columnName": "STS_CD",    "domainId": "d_code_s" },
+    { "id": "t_upprdept", "ko": "상위부서",   "wordIds": ["w_upper", "w_dept"],"columnName": "UPPR_DEPT_NO","domainId": "d_idno" },
+    { "id": "t_revjrnl",  "ko": "역분개번호", "wordIds": ["w_rev", "w_jrnl", "w_no"],"columnName": "REV_JRNL_NO","domainId": "d_idno" },
+    { "id": "t_suppamt",  "ko": "공급금액",   "wordIds": ["w_supp", "w_amt"], "columnName": "SUPP_AMT",  "domainId": "d_amt" },
+    { "id": "t_addr",     "ko": "주소",       "wordIds": ["w_addr"],          "columnName": "ADDR",      "domainId": "d_desc" }
+  ],
+  "entities": [
+    {
+      "id": "e_emp",
+      "ko": "사원",
+      "tableName": "STD_TBM_EMP",
+      "tableType": "M",
+      "position": { "x": 160, "y": 160 },
+      "attributes": [
+        { "id": "a_emp_pk",    "termId": "t_empno",   "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_emp_nm",    "termId": "t_empnm",   "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_emp_email", "termId": "t_empemail","isPk": false, "isNotNull": false, "isUnique": true,  "default": null },
+        { "id": "a_emp_tel",   "termId": "t_emptel",  "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_emp_dept",  "termId": "t_deptno",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_emp_grd",   "termId": "t_grdcd",   "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_emp_appr",  "termId": "t_empno",   "isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_std",
+      "indexes": [
+        { "id": "ix_emp_email", "name": "UX_EMP_EMAIL", "columns": ["EMP_EMAIL"], "unique": true },
+        { "id": "ix_emp_dept",  "name": "IX_EMP_DEPT",  "columns": ["DEPT_NO", "EMP_NM"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_dept",
+      "ko": "부서",
+      "tableName": "STD_TBM_DEPT",
+      "tableType": "M",
+      "position": { "x": 470, "y": 60 },
+      "attributes": [
+        { "id": "a_dept_pk",   "termId": "t_deptno",    "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_dept_nm",   "termId": "t_deptnm",    "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_dept_upper","termId": "t_upprdept",  "isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_std",
+      "indexes": [
+        { "id": "ix_dept_nm", "name": "IX_DEPT_NM", "columns": ["DEPT_NM"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_grd",
+      "ko": "직급",
+      "tableName": "STD_TBM_GRD",
+      "tableType": "M",
+      "position": { "x": 470, "y": 280 },
+      "attributes": [
+        { "id": "a_grd_pk", "termId": "t_grdcd", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_grd_nm", "termId": "t_grdnm", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null }
+      ],
+      "groupId": "g_std"
+    },
+    {
+      "id": "e_cust",
+      "ko": "고객",
+      "tableName": "STD_TBM_CUST",
+      "tableType": "M",
+      "position": { "x": 780, "y": 160 },
+      "attributes": [
+        { "id": "a_cust_pk",  "termId": "t_custno", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_cust_nm",  "termId": "t_custnm", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_cust_tel", "termId": "t_emptel", "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_cust_addr","termId": "t_addr",   "isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_std",
+      "indexes": [
+        { "id": "ix_cust_nm", "name": "IX_CUST_NM", "columns": ["CUST_NM"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_supp",
+      "ko": "공급처",
+      "tableName": "STD_TBM_SUPP",
+      "tableType": "M",
+      "position": { "x": 1090, "y": 160 },
+      "attributes": [
+        { "id": "a_supp_pk", "termId": "t_suppno", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_supp_nm", "termId": "t_suppnm", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null }
+      ],
+      "groupId": "g_std"
+    },
+    {
+      "id": "e_sal",
+      "ko": "급여상세",
+      "tableName": "HR_TBD_SAL",
+      "tableType": "D",
+      "position": { "x": 80, "y": 120 },
+      "attributes": [
+        { "id": "a_sal_emp",  "termId": "t_empno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_sal_slip", "termId": "t_jrnlno", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_sal_amt",  "termId": "t_salamt", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_sal_dt",   "termId": "t_jrnldt", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null }
+      ],
+      "groupId": "g_hr",
+      "indexes": [
+        { "id": "ix_sal_dt", "name": "IX_SAL_DT", "columns": ["EMP_NO", "JRNL_DT"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_salh",
+      "ko": "급여이력",
+      "tableName": "HR_TBH_SAL",
+      "tableType": "H",
+      "position": { "x": 80, "y": 340 },
+      "attributes": [
+        { "id": "a_salh_emp",  "termId": "t_empno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_salh_bgn",  "termId": "t_bgndt",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_salh_end",  "termId": "t_enddt",  "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_salh_amt",  "termId": "t_salamt", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_salh_slip", "termId": "t_jrnlno", "isPk": false, "isNotNull": true,  "isUnique": true,  "default": null }
+      ],
+      "groupId": "g_hr"
+    },
+    {
+      "id": "e_acct",
+      "ko": "계정과목",
+      "tableName": "FIN_TBM_ACCT",
+      "tableType": "M",
+      "position": { "x": 100, "y": 110 },
+      "attributes": [
+        { "id": "a_acct_pk",  "termId": "t_acctcd", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_acct_nm",  "termId": "t_acctnm", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_acct_use", "termId": "t_useyn",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'Y'" }
+      ],
+      "groupId": "g_fin",
+      "indexes": [
+        { "id": "ix_acct_cd", "name": "UX_ACCT_CD", "columns": ["ACCT_CD"], "unique": true }
+      ]
+    },
+    {
+      "id": "e_jrnl",
+      "ko": "분개",
+      "tableName": "FIN_TBT_JRNL",
+      "tableType": "T",
+      "position": { "x": 400, "y": 110 },
+      "attributes": [
+        { "id": "a_jrnl_acct","termId": "t_acctcd",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_jrnl_no",  "termId": "t_jrnlno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_jrnl_seq", "termId": "t_jrnlseq", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_jrnl_amt", "termId": "t_jrnlamt", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_jrnl_dt",  "termId": "t_jrnldt",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_jrnl_desc","termId": "t_jrnldesc","isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_jrnl_rev", "termId": "t_revjrnl", "isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_fin",
+      "indexes": [
+        { "id": "ix_jrnl_dt", "name": "IX_JRNL_DT", "columns": ["ACCT_CD", "JRNL_DT"], "unique": false }
+      ]
+    },
+    {
+      "id": "e_audit",
+      "ko": "감사로그",
+      "tableName": "FIN_TBL_AUDIT",
+      "tableType": "L",
+      "position": { "x": 100, "y": 330 },
+      "attributes": [
+        { "id": "a_audit_pk",  "termId": "t_jrnlno",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_audit_emp",  "termId": "t_empno",   "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_audit_desc", "termId": "t_jrnldesc","isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_audit_dt",   "termId": "t_inoutdt", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null }
+      ],
+      "groupId": "g_fin"
+    },
+    {
+      "id": "e_item",
+      "ko": "품목",
+      "tableName": "LOG_TBM_ITEM",
+      "tableType": "M",
+      "position": { "x": 100, "y": 100 },
+      "attributes": [
+        { "id": "a_item_pk",  "termId": "t_itemcd",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_item_nm",  "termId": "t_itemnm",  "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_item_supp", "termId": "t_suppno", "isPk": false, "isNotNull": false, "isUnique": false, "default": null },
+        { "id": "a_item_use", "termId": "t_useyn",   "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'Y'" }
+      ],
+      "groupId": "g_log",
+      "indexes": [
+        { "id": "ix_item_cd", "name": "UX_ITEM_CD", "columns": ["ITEM_CD"], "unique": true }
+      ]
+    },
+    {
+      "id": "e_wh",
+      "ko": "창고",
+      "tableName": "LOG_TBM_WH",
+      "tableType": "M",
+      "position": { "x": 410, "y": 100 },
+      "attributes": [
+        { "id": "a_wh_pk", "termId": "t_whcd", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_wh_nm", "termId": "t_whnm", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_wh_addr","termId": "t_addr", "isPk": false, "isNotNull": false, "isUnique": false, "default": null }
+      ],
+      "groupId": "g_log"
+    },
+    {
+      "id": "e_inout",
+      "ko": "입출고",
+      "tableName": "LOG_TBT_INOUT",
+      "tableType": "T",
+      "position": { "x": 260, "y": 330 },
+      "attributes": [
+        { "id": "a_inout_item","termId": "t_itemcd",   "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_inout_wh",  "termId": "t_whcd",     "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_inout_dt",  "termId": "t_inoutdt",  "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_inout_seq", "termId": "t_inoutseq", "isPk": true,  "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_inout_qty", "termId": "t_inoutqty", "isPk": false, "isNotNull": true,  "isUnique": false, "default": null },
+        { "id": "a_inout_sts", "termId": "t_stscd",    "isPk": false, "isNotNull": true,  "isUnique": false, "default": "'IN'" }
+      ],
+      "groupId": "g_log",
+      "indexes": [
+        { "id": "ix_inout_dt", "name": "IX_INOUT_DT", "columns": ["ITEM_CD", "INOUT_DTM"], "unique": false }
+      ]
+    }
+  ],
+  "relationships": [
+    { "id": "r_emp_dept",   "fromEntityId": "e_emp",   "fromAttrId": "a_emp_dept",   "toEntityId": "e_dept",  "toAttrId": "a_dept_pk",  "type": "many-to-one" },
+    { "id": "r_emp_grd",    "fromEntityId": "e_emp",   "fromAttrId": "a_emp_grd",    "toEntityId": "e_grd",   "toAttrId": "a_grd_pk",   "type": "many-to-one" },
+    { "id": "r_dept_upper", "fromEntityId": "e_dept",  "fromAttrId": "a_dept_upper", "toEntityId": "e_dept",  "toAttrId": "a_dept_pk",  "type": "many-to-one" },
+    { "id": "r_emp_appr",   "fromEntityId": "e_emp",   "fromAttrId": "a_emp_appr",   "toEntityId": "e_emp",   "toAttrId": "a_emp_pk",   "type": "many-to-one" },
+    { "id": "r_sal_emp",    "fromEntityId": "e_sal",   "fromAttrId": "a_sal_emp",    "toEntityId": "e_emp",   "toAttrId": "a_emp_pk",   "type": "many-to-one" },
+    { "id": "r_salh_emp",   "fromEntityId": "e_salh",  "fromAttrId": "a_salh_emp",   "toEntityId": "e_emp",   "toAttrId": "a_emp_pk",   "type": "many-to-one" },
+    { "id": "r_salh_sal",   "fromEntityId": "e_salh",  "fromAttrId": "a_salh_slip",  "toEntityId": "e_sal",   "toAttrId": "a_sal_slip", "type": "one-to-one" },
+    { "id": "r_jrnl_acct",  "fromEntityId": "e_jrnl",  "fromAttrId": "a_jrnl_acct",  "toEntityId": "e_acct",  "toAttrId": "a_acct_pk",  "type": "many-to-one" },
+    { "id": "r_jrnl_rev",   "fromEntityId": "e_jrnl",  "fromAttrId": "a_jrnl_rev",   "toEntityId": "e_jrnl",  "toAttrId": "a_jrnl_no",  "type": "many-to-one" },
+    { "id": "r_audit_emp",  "fromEntityId": "e_audit", "fromAttrId": "a_audit_emp",  "toEntityId": "e_emp",   "toAttrId": "a_emp_pk",   "type": "many-to-one" },
+    { "id": "r_inout_item", "fromEntityId": "e_inout", "fromAttrId": "a_inout_item", "toEntityId": "e_item",  "toAttrId": "a_item_pk",  "type": "many-to-one" },
+    { "id": "r_inout_wh",   "fromEntityId": "e_inout", "fromAttrId": "a_inout_wh",   "toEntityId": "e_wh",    "toAttrId": "a_wh_pk",    "type": "many-to-one" },
+    { "id": "r_item_supp",  "fromEntityId": "e_item",  "fromAttrId": "a_item_supp",  "toEntityId": "e_supp",  "toAttrId": "a_supp_pk",  "type": "many-to-one" }
+  ],
+  "tableGroups": [
+    {
+      "id": "g_std",
+      "name": "기준정보",
+      "prefix": "STD",
+      "color": "#3b82f6",
+      "position": { "x": 20, "y": 20 },
+      "size": { "width": 1140, "height": 380 },
+      "namingEnabled": true
+    },
+    {
+      "id": "g_hr",
+      "name": "인사",
+      "prefix": "HR",
+      "color": "#10b981",
+      "position": { "x": 20, "y": 430 },
+      "size": { "width": 460, "height": 330 },
+      "namingEnabled": true
+    },
+    {
+      "id": "g_fin",
+      "name": "재무",
+      "prefix": "FIN",
+      "color": "#f59e0b",
+      "position": { "x": 510, "y": 430 },
+      "size": { "width": 650, "height": 330 },
+      "namingEnabled": true
+    },
+    {
+      "id": "g_log",
+      "name": "물류",
+      "prefix": "LOG",
+      "color": "#8b5cf6",
+      "position": { "x": 20, "y": 790 },
+      "size": { "width": 560, "height": 420 },
+      "namingEnabled": true
+    }
+  ],
+  "views": [
+    {
+      "id": "v_emp_sal",
+      "name": "V_EMP_SALARY",
+      "sql": "SELECT E.EMP_NO, E.EMP_NM, D.DEPT_NM, G.GRD_NM, S.SAL_AMT\nFROM STD_TBM_EMP E\n  JOIN STD_TBM_DEPT D ON E.DEPT_NO = D.DEPT_NO\n  JOIN STD_TBM_GRD G ON E.GRD_CD = G.GRD_CD\n  LEFT JOIN HR_TBD_SAL S ON E.EMP_NO = S.EMP_NO\nWHERE S.JRNL_NO = (\n  SELECT MAX(S2.JRNL_NO) FROM HR_TBD_SAL S2 WHERE S2.EMP_NO = E.EMP_NO\n)"
+    },
+    {
+      "id": "v_inv",
+      "name": "V_INVENTORY",
+      "sql": "SELECT I.ITEM_CD, I.ITEM_NM, W.WH_CD, W.WH_NM,\n  COALESCE(IN_Q.SUM_QTY, 0) - COALESCE(OUT_Q.SUM_QTY, 0) AS INV_QTY\nFROM LOG_TBM_ITEM I\n  CROSS JOIN LOG_TBM_WH W\n  LEFT JOIN (\n    SELECT ITEM_CD, WH_CD, SUM(INOUT_QTY) AS SUM_QTY\n    FROM LOG_TBT_INOUT WHERE STS_CD = 'IN' GROUP BY ITEM_CD, WH_CD\n  ) IN_Q ON I.ITEM_CD = IN_Q.ITEM_CD AND W.WH_CD = IN_Q.WH_CD\n  LEFT JOIN (\n    SELECT ITEM_CD, WH_CD, SUM(INOUT_QTY) AS SUM_QTY\n    FROM LOG_TBT_INOUT WHERE STS_CD = 'OUT' GROUP BY ITEM_CD, WH_CD\n  ) OUT_Q ON I.ITEM_CD = OUT_Q.ITEM_CD AND W.WH_CD = OUT_Q.WH_CD"
+    },
+    {
+      "id": "v_jrnl_monthly",
+      "name": "V_JRNL_MONTHLY",
+      "sql": "SELECT A.ACCT_CD, A.ACCT_NM,\n  EXTRACT(YEAR FROM J.JRNL_DT) AS YYYY,\n  EXTRACT(MONTH FROM J.JRNL_DT) AS MM,\n  SUM(J.JRNL_AMT) AS TOTAL_AMT\nFROM FIN_TBT_JRNL J\n  JOIN FIN_TBM_ACCT A ON J.ACCT_CD = A.ACCT_CD\nGROUP BY A.ACCT_CD, A.ACCT_NM, EXTRACT(YEAR FROM J.JRNL_DT), EXTRACT(MONTH FROM J.JRNL_DT)\nORDER BY YYYY, MM, A.ACCT_CD"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "meta": {
+    "name": "사내 홈페이지 리뉴얼",
+    "description": "WBS 앱 입문용 샘플. 2수준 분해 · FS 의존 · 마일스톤만 쓴 가장 단순한 형태다. 달력은 기본값(주5일, 휴일 없음).",
+    "startDate": "2026-07-06",
+    "createdAt": "2026-07-06T09:00:00.000Z",
+    "updatedAt": "2026-07-22T09:00:00.000Z"
+  },
+  "tasks": [
+    { "id": "t-plan",      "parentId": null,     "order": 0, "name": "기획",           "start": null,         "duration": null, "effort": null, "progress": 0,   "status": "todo" },
+    { "id": "t-plan-req",  "parentId": "t-plan", "order": 0, "name": "요구사항 정리",   "start": "2026-07-06", "duration": 3,    "effort": 18,   "progress": 100, "status": "done",  "assignee": "김지원" },
+    { "id": "t-plan-ia",   "parentId": "t-plan", "order": 1, "name": "메뉴 구조 확정",  "start": "2026-07-09", "duration": 2,    "effort": 10,   "progress": 100, "status": "done",  "assignee": "김지원" },
+
+    { "id": "t-design",     "parentId": null,       "order": 1, "name": "디자인",        "start": null,         "duration": null, "effort": null, "progress": 0,  "status": "todo" },
+    { "id": "t-design-wire","parentId": "t-design", "order": 0, "name": "와이어프레임",  "start": "2026-07-13", "duration": 4,    "effort": 24,   "progress": 100, "status": "done",  "assignee": "박서준" },
+    { "id": "t-design-ui",  "parentId": "t-design", "order": 1, "name": "시안 2안 제작", "start": "2026-07-17", "duration": 5,    "effort": 32,   "progress": 60,  "status": "doing", "assignee": "박서준", "note": "A안(카드형) / B안(리스트형) 비교 중" },
+
+    { "id": "t-dev",       "parentId": null,    "order": 2, "name": "개발",            "start": null,         "duration": null, "effort": null, "progress": 0,  "status": "todo" },
+    { "id": "t-dev-front", "parentId": "t-dev", "order": 0, "name": "퍼블리싱",        "start": "2026-07-24", "duration": 6,    "effort": 40,   "progress": 20, "status": "doing", "assignee": "이하늘" },
+    { "id": "t-dev-cms",   "parentId": "t-dev", "order": 1, "name": "CMS 연동",        "start": "2026-08-03", "duration": 5,    "effort": 36,   "progress": 0,  "status": "todo",  "assignee": "이하늘" },
+
+    { "id": "t-qa",       "parentId": null,   "order": 3, "name": "검수·오픈",        "start": null,         "duration": null, "effort": null, "progress": 0, "status": "todo" },
+    { "id": "t-qa-test",  "parentId": "t-qa", "order": 0, "name": "크로스브라우저 점검","start": "2026-08-10", "duration": 3,    "effort": 16,   "progress": 0, "status": "todo",  "assignee": "최민아" },
+    { "id": "t-qa-fix",   "parentId": "t-qa", "order": 1, "name": "지적사항 반영",     "start": "2026-08-13", "duration": 2,    "effort": 12,   "progress": 0, "status": "todo",  "assignee": "이하늘" },
+    { "id": "t-qa-open",  "parentId": "t-qa", "order": 2, "name": "오픈",             "start": "2026-08-17", "duration": 0,    "effort": null, "progress": 0, "status": "todo",  "milestone": true }
+  ],
+  "links": [
+    { "id": "l1", "from": "t-plan-req",   "to": "t-plan-ia",    "type": "FS", "lag": 0 },
+    { "id": "l2", "from": "t-plan-ia",    "to": "t-design-wire","type": "FS", "lag": 0 },
+    { "id": "l3", "from": "t-design-wire","to": "t-design-ui",  "type": "FS", "lag": 0 },
+    { "id": "l4", "from": "t-design-ui",  "to": "t-dev-front",  "type": "FS", "lag": 0 },
+    { "id": "l5", "from": "t-dev-front",  "to": "t-dev-cms",    "type": "FS", "lag": 0 },
+    { "id": "l6", "from": "t-dev-cms",    "to": "t-qa-test",    "type": "FS", "lag": 0 },
+    { "id": "l7", "from": "t-qa-test",    "to": "t-qa-fix",     "type": "FS", "lag": 0 },
+    { "id": "l8", "from": "t-qa-fix",     "to": "t-qa-open",    "type": "FS", "lag": 0 }
+  ],
+  "calendar": {
+    "workdays": [1, 2, 3, 4, 5],
+    "holidays": []
+  }
+}

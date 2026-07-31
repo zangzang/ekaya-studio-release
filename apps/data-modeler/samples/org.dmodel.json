@@ -1,0 +1,540 @@
+{
+  "version": 1,
+  "meta": {
+    "name": "조직관리",
+    "createdAt": "2026-06-16T00:00:00.000Z",
+    "updatedAt": "2026-06-17T14:28:00.411Z"
+  },
+  "settings": {
+    "defaultPrefix": "TB",
+    "namingPattern": "B"
+  },
+  "words": [
+    {
+      "id": "w_emp",
+      "ko": "사원",
+      "abbr": "EMP",
+      "en": "Employee",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_dept",
+      "ko": "부서",
+      "abbr": "DEPT",
+      "en": "Department",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_pos",
+      "ko": "직책",
+      "abbr": "POS",
+      "en": "Position",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_hist",
+      "ko": "이력",
+      "abbr": "HIST",
+      "en": "History",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_bgn",
+      "ko": "시작",
+      "abbr": "BGN",
+      "en": "Begin",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_end",
+      "ko": "종료",
+      "abbr": "END",
+      "en": "End",
+      "isFormat": false,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_no",
+      "ko": "번호",
+      "abbr": "NO",
+      "en": "Number",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_nm",
+      "ko": "명",
+      "abbr": "NM",
+      "en": "Name",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_cd",
+      "ko": "코드",
+      "abbr": "CD",
+      "en": "Code",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    },
+    {
+      "id": "w_dt",
+      "ko": "일자",
+      "abbr": "DT",
+      "en": "Date",
+      "isFormat": true,
+      "synonyms": [],
+      "forbidden": false
+    }
+  ],
+  "domains": [
+    {
+      "id": "d_idno",
+      "name": "식별번호",
+      "group": "문자",
+      "dataType": "VARCHAR",
+      "length": 20,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_name",
+      "name": "명칭",
+      "group": "문자",
+      "dataType": "VARCHAR",
+      "length": 100,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_code",
+      "name": "코드값",
+      "group": "문자",
+      "dataType": "VARCHAR",
+      "length": 10,
+      "scale": null,
+      "unit": null,
+      "default": null
+    },
+    {
+      "id": "d_date",
+      "name": "일자",
+      "group": "일시",
+      "dataType": "DATE",
+      "length": null,
+      "scale": null,
+      "unit": null,
+      "default": null
+    }
+  ],
+  "terms": [
+    {
+      "id": "t_empno",
+      "ko": "사원번호",
+      "wordIds": [
+        "w_emp",
+        "w_no"
+      ],
+      "columnName": "EMP_NO",
+      "domainId": "d_idno"
+    },
+    {
+      "id": "t_empnm",
+      "ko": "사원명",
+      "wordIds": [
+        "w_emp",
+        "w_nm"
+      ],
+      "columnName": "EMP_NM",
+      "domainId": "d_name"
+    },
+    {
+      "id": "t_hiredt",
+      "ko": "입사일자",
+      "wordIds": [
+        "w_emp",
+        "w_dt"
+      ],
+      "columnName": "EMP_DT",
+      "domainId": "d_date"
+    },
+    {
+      "id": "t_deptno",
+      "ko": "부서번호",
+      "wordIds": [
+        "w_dept",
+        "w_no"
+      ],
+      "columnName": "DEPT_NO",
+      "domainId": "d_idno"
+    },
+    {
+      "id": "t_deptnm",
+      "ko": "부서명",
+      "wordIds": [
+        "w_dept",
+        "w_nm"
+      ],
+      "columnName": "DEPT_NM",
+      "domainId": "d_name"
+    },
+    {
+      "id": "t_poscd",
+      "ko": "직책코드",
+      "wordIds": [
+        "w_pos",
+        "w_cd"
+      ],
+      "columnName": "POS_CD",
+      "domainId": "d_code"
+    },
+    {
+      "id": "t_posnm",
+      "ko": "직책명",
+      "wordIds": [
+        "w_pos",
+        "w_nm"
+      ],
+      "columnName": "POS_NM",
+      "domainId": "d_name"
+    },
+    {
+      "id": "t_bgndt",
+      "ko": "시작일자",
+      "wordIds": [
+        "w_bgn",
+        "w_dt"
+      ],
+      "columnName": "BGN_DT",
+      "domainId": "d_date"
+    },
+    {
+      "id": "t_enddt",
+      "ko": "종료일자",
+      "wordIds": [
+        "w_end",
+        "w_dt"
+      ],
+      "columnName": "END_DT",
+      "domainId": "d_date"
+    }
+  ],
+  "entities": [
+    {
+      "id": "e_emp",
+      "ko": "사원",
+      "tableName": "ADM_TBM_EMP",
+      "position": {
+        "x": 339,
+        "y": 366.75
+      },
+      "attributes": [
+        {
+          "id": "a_emp_pk",
+          "termId": "t_empno",
+          "isPk": true,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_emp_nm",
+          "termId": "t_empnm",
+          "isPk": false,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_emp_hire",
+          "termId": "t_hiredt",
+          "isPk": false,
+          "isNotNull": false,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_emp_dept",
+          "termId": "t_deptno",
+          "isPk": false,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_emp_pos",
+          "termId": "t_poscd",
+          "isPk": false,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        }
+      ],
+      "groupId": "g_3",
+      "tableType": "M"
+    },
+    {
+      "id": "e_dept",
+      "ko": "부서",
+      "tableName": "ADM_TBM_DEPT",
+      "position": {
+        "x": 632,
+        "y": 313.5
+      },
+      "attributes": [
+        {
+          "id": "a_dept_pk",
+          "termId": "t_deptno",
+          "isPk": true,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_dept_nm",
+          "termId": "t_deptnm",
+          "isPk": false,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_4",
+          "termId": "t_bgndt",
+          "isPk": false,
+          "isNotNull": false,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_5",
+          "termId": "t_enddt",
+          "isPk": false,
+          "isNotNull": false,
+          "isUnique": false,
+          "default": null
+        }
+      ],
+      "groupId": "g_3",
+      "tableType": "M"
+    },
+    {
+      "id": "e_pos",
+      "ko": "직책",
+      "tableName": "ADM_TBM_POS",
+      "position": {
+        "x": 635,
+        "y": 115
+      },
+      "attributes": [
+        {
+          "id": "a_pos_pk",
+          "termId": "t_poscd",
+          "isPk": true,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_pos_nm",
+          "termId": "t_posnm",
+          "isPk": false,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_1",
+          "termId": "t_bgndt",
+          "isPk": false,
+          "isNotNull": false,
+          "isUnique": false,
+          "default": null
+        }
+      ],
+      "groupId": "g_3",
+      "tableType": "M"
+    },
+    {
+      "id": "e_empdh",
+      "ko": "사원부서이력",
+      "tableName": "ADM_TBH_EMP_DEPT",
+      "position": {
+        "x": 48,
+        "y": 313.5
+      },
+      "attributes": [
+        {
+          "id": "a_edh_emp",
+          "termId": "t_empno",
+          "isPk": true,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_edh_bgn",
+          "termId": "t_bgndt",
+          "isPk": true,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_edh_dept",
+          "termId": "t_deptno",
+          "isPk": false,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_edh_end",
+          "termId": "t_enddt",
+          "isPk": false,
+          "isNotNull": false,
+          "isUnique": false,
+          "default": null
+        }
+      ],
+      "groupId": "g_3",
+      "tableType": "M"
+    },
+    {
+      "id": "e_emph",
+      "ko": "사원직책이력",
+      "tableName": "ADM_TBH_EMP_POS",
+      "position": {
+        "x": 51,
+        "y": 84
+      },
+      "attributes": [
+        {
+          "id": "a_eph_emp",
+          "termId": "t_empno",
+          "isPk": true,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_eph_bgn",
+          "termId": "t_bgndt",
+          "isPk": true,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_eph_pos",
+          "termId": "t_poscd",
+          "isPk": false,
+          "isNotNull": true,
+          "isUnique": false,
+          "default": null
+        },
+        {
+          "id": "a_eph_end",
+          "termId": "t_enddt",
+          "isPk": false,
+          "isNotNull": false,
+          "isUnique": false,
+          "default": null
+        }
+      ],
+      "groupId": "g_3",
+      "tableType": "M"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "r_emp_dept",
+      "fromEntityId": "e_emp",
+      "toEntityId": "e_dept",
+      "columnPairs": [{ "fromAttrId": "a_emp_dept", "toAttrId": "a_dept_pk" }],
+      "type": "many-to-one"
+    },
+    {
+      "id": "r_emp_pos",
+      "fromEntityId": "e_emp",
+      "toEntityId": "e_pos",
+      "columnPairs": [{ "fromAttrId": "a_emp_pos", "toAttrId": "a_pos_pk" }],
+      "type": "many-to-one"
+    },
+    {
+      "id": "r_edh_emp",
+      "fromEntityId": "e_empdh",
+      "toEntityId": "e_emp",
+      "columnPairs": [{ "fromAttrId": "a_edh_emp", "toAttrId": "a_emp_pk" }],
+      "type": "many-to-one"
+    },
+    {
+      "id": "r_edh_dept",
+      "fromEntityId": "e_empdh",
+      "toEntityId": "e_dept",
+      "columnPairs": [{ "fromAttrId": "a_edh_dept", "toAttrId": "a_dept_pk" }],
+      "type": "many-to-one"
+    },
+    {
+      "id": "r_eph_emp",
+      "fromEntityId": "e_emph",
+      "toEntityId": "e_emp",
+      "columnPairs": [{ "fromAttrId": "a_eph_emp", "toAttrId": "a_emp_pk" }],
+      "type": "many-to-one"
+    },
+    {
+      "id": "r_eph_pos",
+      "fromEntityId": "e_emph",
+      "toEntityId": "e_pos",
+      "columnPairs": [{ "fromAttrId": "a_eph_pos", "toAttrId": "a_pos_pk" }],
+      "type": "many-to-one"
+    }
+  ],
+  "tableGroups": [
+    {
+      "id": "g_3",
+      "name": "새 그룹",
+      "prefix": "ADM",
+      "color": "#3b82f6",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 909,
+        "height": 611.75
+      },
+      "namingEnabled": true
+    },
+    {
+      "id": "g_4",
+      "name": "새 그룹",
+      "prefix": "SOS",
+      "color": "#10b981",
+      "position": {
+        "x": 295,
+        "y": 691.75
+      },
+      "size": {
+        "width": 319,
+        "height": 263
+      }
+    }
+  ]
+}
