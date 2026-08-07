@@ -14,9 +14,6 @@ body:
       label: 제품
       options:
         - devvault
-        - modeler
-        - diff
-        - design
     validations:
       required: true
   - type: input
