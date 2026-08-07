@@ -14,9 +14,6 @@ body:
       description: 어느 제품에서 발생했는지
       options:
         - devvault
-        - modeler
-        - diff
-        - design
     validations:
       required: true
   - type: input
