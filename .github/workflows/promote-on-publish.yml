@@ -20,6 +20,8 @@ jobs:
     # (추가 안전장치: GITHUB_TOKEN으로 만든 릴리스는 애초에 workflow를 재트리거하지 않음)
     if: ${{ !endsWith(github.event.release.tag_name, '-latest') }}
     runs-on: ubuntu-latest
+    # 자산 완주를 최대 30분 기다린다. 기본 타임아웃(6시간)에 걸려 러너를 오래 붙들지 않도록 조인다.
+    timeout-minutes: 40
     steps:
       # gh release 하위명령이 대상 레포를 git 원격에서 추론하므로 checkout이 필요하다.
       # (GH_REPO 만으로는 gh가 여전히 git 컨텍스트를 찾다 "not a git repository"로 실패)
@@ -44,8 +46,48 @@ jobs:
 
           echo "promote: $TAG -> $latest_tag"
 
+          # ── 자산 완주 대기 ─────────────────────────────────────────────────
+          # Publish 이벤트는 "사람이 Publish를 누른" 순간 오지만, 플랫폼별 빌드 잡은 그 뒤에도
+          # 계속 자산을 올린다. 2026-08-24 v0.10.0에서 Windows setup.exe와 latest.json이
+          # Publish보다 14분 늦게 도착해, promote가 .deb 두 개만 담은 포인터를 만들고 "success"로
+          # 끝냈다 → endpoint의 latest.json이 사라져 모든 클라이언트의 업데이트 확인이 404로 죽었다.
+          # 그래서 latest.json이 나타날 때까지 기다리고, 그것이 가리키는 설치본과 서명이 전부
+          # 릴리스에 올라왔는지 확인한 뒤에만 포인터를 만든다.
+          ready=0
+          for i in $(seq 1 60); do            # 30초 × 60 = 최대 30분
+            names="$(gh release view "$TAG" --json assets --jq '.assets[].name')"
+
+            if ! printf '%s\n' "$names" | grep -qx 'latest.json'; then
+              echo "wait($i/60): latest.json 아직 없음"
+              sleep 30; continue
+            fi
+
+            # latest.json이 가리키는 파일이 전부 있는지 대조한다. 서명(.sig)까지 보는 이유는
+            # "설치본은 왔는데 서명이 아직인" 반쪽 상태로 포인터를 만들면 업데이터가 검증에서
+            # 실패하기 때문이다.
+            rm -f "$workdir/latest.json"
+            gh release download "$TAG" --dir "$workdir" --pattern 'latest.json'
+            missing=''
+            for f in $(jq -r '.platforms[].url' "$workdir/latest.json" | xargs -n1 basename | sort -u); do
+              printf '%s\n' "$names" | grep -qx "$f"     || missing="$missing $f"
+              printf '%s\n' "$names" | grep -qx "$f.sig" || missing="$missing $f.sig"
+            done
+            if [ -n "$missing" ]; then
+              echo "wait($i/60): latest.json이 가리키는 자산 누락 -$missing"
+              sleep 30; continue
+            fi
+
+            echo 'ok: 자산 완주 확인'
+            ready=1; break
+          done
+          if [ "$ready" != '1' ]; then
+            echo '::error::30분 안에 자산이 완주하지 않아 포인터를 갱신하지 않았습니다.'
+            echo '::error::기존 포인터는 건드리지 않았습니다. 빌드가 모두 끝난 뒤 이 실행을 Re-run 하세요.'
+            exit 1
+          fi
+
           # 발행된 버전 릴리스의 모든 자산(설치본 + latest.json + 서명)을 내려받는다.
-          gh release download "$TAG" --dir "$workdir"
+          gh release download "$TAG" --dir "$workdir" --clobber
 
           # 기존 포인터 릴리스와 태그를 제거하고, 새 자산으로 재생성한다.
           gh release delete "$latest_tag" --yes --cleanup-tag || true
@@ -54,3 +96,9 @@ jobs:
             --notes "자동 업데이트 endpoint 전용 고정 릴리스입니다. 배포 노트는 ${TAG} 릴리스를 참고하세요."
 
           echo "done: $latest_tag 가 $TAG 자산으로 갱신됨"
+
+          # 포인터가 실제로 쓸 수 있는 상태인지 마지막에 한 번 더 확인한다(조용한 성공 금지).
+          for f in latest.json; do
+            gh release view "$latest_tag" --json assets --jq '.assets[].name' | grep -qx "$f" \
+              || { echo "::error::포인터에 $f 가 없습니다 — endpoint가 404가 됩니다."; exit 1; }
+          done
